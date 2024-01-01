@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eco-Tree</title>
+    <link rel="stylesheet" href="/styles/game.css" />
+    <link rel="icon" href="/front/icon.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <nav class="navigation">
+          <a href=<%="/menu"%> class="profile">Menu</a>
+          <a href="/levels" class="profile">Niveles</a>
+          <div class="points">
+            Puntos: <%= @user.points %>
+          </div>
+          <div id="coin-count" class="points">
+            coins: <%= @user.coin %>
+          </div>
+          <a href="/tree" class="profile">Mi Arbol</a>
+      </nav>
+    </header>
+    
+    <section class="play-section">
+      <h5 id="level_selected" value=<%= @level_selected %> >Nivel <%= @level_selected %></h5>
+      <h3 class="ques">Pregunta <%=@question.id%>:</h3>
+      <p class="description"> <%= @question.description %> </p>
+      <h5 id="timer" style="color: red;"> </h5>
+      <form action=<%="/game/#{@question.id}?level=#{@level_selected}"%> method="POST" id="game-form">
+        <div class="options">
+          <% @options.each do |option| %>
+            <label class="option">
+              <input type="radio" name="selected_option_id" class="option-button" value="<%= option.id %>" id="option-<%= option.id %>">
+              <%=option.description%>
+            </label>
+          <% end %>
+        </div>
+        <input type="submit" value="Responder" id="submit-button" class="submit-button" disabled>
+        <input type="hidden" name="timeout" value="false">
+      </form>
+    </section>
+
+    <footer>
+      <div class="title">
+        <h4 class="ques">Comprar Ayudas</h4>
+      </div>
+      <div class="help-container">
+        <div>
+          <p class="description">Aumentar tiempo por 20s</p>
+          <input type="button" value="30 EcoCoins" id="add-time-button" class="add-time-button">
+        </div>
+        <div>
+          <p class="description">Eliminar 2 opciones incorrectas</p>
+          <input type="button" value="10 EcoCoins" id="remove-options-button" class="remove-options-button">
+        </div>
+      </div>
+    </footer>
+    <script src="<%= url('/scripts/game.js') %>"></script>
+  </body>
+</html>

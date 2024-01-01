@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eco-Tree</title>
+    <link rel="stylesheet" href="/styles/asked.css" />
+    <link rel="icon" href="/front/icon.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    
+    <section class="asked">
+      <h3 class="descrip"><%= @question.description %></h3>
+      <% if @user_answer != 'Pregunta no contestada' %> 
+        <h5>Tu respuesta fue: "<%= @user_answer %>"</h5>
+      <% end %> 
+      
+      <form action=<%="/asked/#{@question.id}?level=#{@level}"%> method="POST" id="asked-form">
+        <div class="options">  
+          <% if @result == 'true' %> 
+            <h2 class="green"><%= @respuesta %></h2>
+            <p>Llevas una racha de <strong><%= @streak %></strong> respuestas correctas</p>
+          <% else %>
+            <h2 class="red"><%= @respuesta %></h2>
+            <h2 class="correct"> Respuesta correcta: "<%= @correct_answer %>"</h2>
+            <p>Perdiste tu racha</p>
+          <% end %>
+          <input type="submit" value="Siguiente pregunta" id="submit-button" class="submit-button">
+        </div>
+      </form>
+      
+    </section>
+  </body>
+</html>

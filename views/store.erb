@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tienda - Eco-Tree</title>
+    <link rel="stylesheet" href="/styles/store.css" />
+    <link rel="icon" href="/front/icon.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+   <header>
+    <nav class="nav">
+      <a href="/menu" class="menu">Volver</a>
+      <div class="eco_coin">
+        EcoCoins:  <strong><%=@coin%></strong> 
+      </div>
+      
+    </nav>
+  </header>
+  
+  <div class="options">
+    <img class="logo" src="/front/logoStore.png" alt="logo"> 
+    <div class="buttons">
+      <a href="/buyItem?item=hoja" class="btn">Comprar Hoja</a>
+      <a href="/buyItem?item=fondo" class="btn">Comprar fondo</a>
+    </div>
+  </div>
+
+  </body>
+</html>

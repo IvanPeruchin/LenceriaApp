@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesion - Eco-Tree</title>
+  <link rel="Stylesheet" href="/styles/login.css">
+  <link rel="icon" href="/front/icon.png"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <a href="/" class="volver"> Volver </a>
+  </header>
+
+  <img class="image" src="/front/logo3.png" alt="logo">
+
+  <div class="crear_usuario">
+    <div class="form-box login">
+      <h2>INICIAR SESION</h2>
+      <form action="/login" method="POST"> 
+
+        <div class="input-box <%= 'error' if @account_error %>">
+          <input type="Usuario" name="username" id="username">
+          <label>Usuario</label>
+          <span id="account-error" class="error-message"><%= @account_error %></span>
+        </div>   
+
+        <div class="input-box <%= 'error' if @password_error %>">
+          <input type="password" name="password" id="password">
+          <label>Contraseña</label>
+          <span id="password-error" class="error-message"><%= @password_error %></span>
+        </div>        
+
+        <button type="submit" class="btn"> Ingresar </button>
+
+        <div class="login-register">
+          <p>No tienes una cuenta?
+            <a href="/register" class="register"> Registrate </a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+ 
+</body>
+</html>

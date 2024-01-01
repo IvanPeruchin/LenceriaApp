@@ -1,0 +1,115 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('/front/lago-min.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+
+.logo{
+  font-size: 3.2em;
+  color: #ffffff;
+  user-select: none;
+  height: 10px;
+}
+
+.game {
+  display: block;
+  width: 300px;
+  height: 70px;
+  font-size: 2em;
+  font-weight: 700;
+  background-color: #162938;
+  border-radius: 10px;
+  padding: 15px 30px;
+  margin:  20px 175px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  transition: background-color 1s;
+  
+}
+
+.game:hover {
+  box-shadow: 0 0 10px #5feb9c;
+  color: #5feb9c;
+}
+
+
+.btn {  
+  display: block;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  background-color: #162938;
+  border-radius: 10px;
+  padding: 15px 30px;
+  margin:  20px 250px;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transition: background-color 1s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 10px #5feb9c;
+  color: #5feb9c;
+}
+
+.btnOut {  
+  display: block;
+  width: 180px;
+  height: 50px;
+  text-align: center;
+  background-color: #162938;
+  border-radius: 10px;
+  padding: 15px 30px;
+  margin:  20px 235px;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transition: background-color 1s;
+}
+
+.btnOut:hover {
+  box-shadow: 0 0 10px #eb5f5f;
+  color: #e30505;  
+}
+
+.Question_Box {
+  position: relative;
+  width: 800px;
+  height: 550px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255,  .5);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 10px rgba(0, 255, 179, 0.399);
+  background-color: #00000017;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

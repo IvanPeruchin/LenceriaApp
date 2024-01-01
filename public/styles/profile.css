@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('/front/profile.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  position: fixed;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 50px;
+  z-index: 99;
+}
+
+.nav a{
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 30px;
+  margin-left: 40px;
+  transition: 5s;
+}
+
+.nav a::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #b7e8d1;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: transform .5s;
+}
+
+.nav a:hover:after{
+  transform: scaleX(1);
+}
+
+
+.settings {
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  line-height: 1.8;
+  width: 900px;
+  height: 600px;
+  border: 2px solid #fff;
+  backdrop-filter: blur(12px);
+  background-color: #1629382a;
+  box-shadow: 0 0 15px rgba(255, 170, 0, 0.608);
+  border-radius: 6px;
+  color: #fff;
+  outline: none;
+  font-size: 1.1em;
+  font-weight: 800;
+  transition: .3s;
+  padding-top: 30px;
+}
+
+.tle{
+  position: relative;
+  bottom: 300px;
+  left: 580px;
+  color: #fff;
+  font-size: 60px;
+  font-weight: 900px;
+  text-shadow:  0 0 15px #000000;
+  padding-bottom: 70px;
+}
+
+.files{
+  display:grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  padding-bottom: 90px;
+}
+
+.user {
+  margin-top: 100px;
+  display:grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center; 
+  padding: 10px;
+}
+
+.birthdate {
+  display:grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+.email {
+  display:grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.btn {
+  position: relative;
+  text-decoration: none;
+  outline: none;
+  width: 300px;
+  height: 60px;
+  top: 300px;
+  border: 2px white;
+  background: #fff;
+  border-radius: 6px;
+  color: #162938;
+  font-size: 30px;
+  font-weight: 800;
+  transition: .3s;
+  align-items: center;
+  text-align: center;
+  z-index: 100;
+  right: 580px;
+  padding: 8px;
+}
+
+.btn:hover {
+  border: 2px solid rgba(2, 156, 33, 0.739);
+  box-shadow: 0 0 30px rgba(0, 228, 141, 0.5);
+  font-size: 31px;
+  padding: 5px;
+  width: 302px;  
+}
+
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranking</title>
+  <link rel="Stylesheet" href="/styles/ranking.css">
+  <link rel="icon" href="/front/icon.png"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header>
+  <nav class="nav">
+      <a href=<%="/menu"%> class="profile">Volver</a>
+  </nav>
+</header>
+
+
+<h2 class ="tle">RANKING</h2>
+<section class="ranking-section">
+  <table class="table">
+    <tr class="titulos">
+      <th>Nombre</th>
+      <th>Puntaje</th>
+    </tr>
+    <% @users.each do |user| %>
+      <tr class="valores">
+      <td class="names"><%= user.username %></td>
+      <td class="points"><%= user.points %></td>
+      </tr>
+    <% end %>
+    </table>
+  </section>
+  <h2 class ="position">TU PUNTAJE: <%= user.points %>  | TU POSICION: <%= @position %> </h2>
+</body>
+</html>

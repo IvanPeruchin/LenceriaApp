@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eco-Tree</title>
+    <link rel="stylesheet" href="/styles/profile.css" />
+    <link rel="icon" href="/front/icon.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+          <a href=<%="/menu"%> class="profile">Volver</a>
+      </nav>
+    </header>
+    <h2 class ="tle">MI PERFIL</h2>
+    <section class="settings">
+
+
+
+      <div class="files">
+        <h2 class="user">Nombre de usuario:  <%= @user.username %></h2>
+
+        <h2 class="birthdate">Fecha de nacimiento:  <%= @user.birthdate %></h2>
+
+        <h2 class="email">Email:  <%= @user.email %></h2>
+        
+        <% if @verificated %>
+          <label>Validado</label>
+        <% else %>       
+          <label>No validado</label>
+        <% end %>
+
+      </div>
+
+         
+     
+    </section>
+    <a href="/profile_change" class="btn"> Modificar datos </a>
+  </body>
+</html>
