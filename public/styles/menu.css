@@ -29,36 +29,12 @@ header{
 
 
 .logo{
-  font-size: 3.2em;
+  font-size: 2.7em;
   color: #ffffff;
-  user-select: none;
-  height: 10px;
+  margin: 40px -5px;
 }
 
-.game {
-  display: block;
-  width: 300px;
-  height: 70px;
-  font-size: 1.9em;
-  background-color: #ff0090;
-  border-radius: 10px;
-  padding: 15px 30px;
-  margin:  20px 175px;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-  transition: background-color 0.2s;
-}
-
-.game:hover {
-  box-shadow: 0 0 10px #fa8bcaea;
-  width: 305px;
-}
-
-
-
-.btnOut {  
+.volver {  
   display: block;
   width: 180px;
   height: 50px;
@@ -66,29 +42,66 @@ header{
   background-color: #ff0090;
   border-radius: 10px;
   padding: 15px 30px;
-  margin:  20px 235px;
+  margin:  40px -5px;
   color: #fff;
   text-decoration: none;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  transition: background-color 1s;
+  transition: background-color 0.2s;
 }
 
-.btnOut:hover {
-  box-shadow: 0 0 10px #eb5f5f;
-  color: #e30505;  
+.volver:hover {
+  box-shadow: 0 0 10px #ff0090;
+  background-color: #fa6abc;
 }
 
-.Question_Box {
-  position: relative;
-  width: 800px;
-  height: 550px;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255,  .5);
-  border-radius: 20px;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 0 10px rgba(0, 255, 179, 0.399);
-  background-color: #00000017;
+.name{
+  color: #fa6abc;
+  transition: 0.2s;
+}
+
+.name:hover{
+  color: #ff0090;
+}
+
+.card{
+  width: 500px;
+  height: 600px;
+  margin: 30px;
+  border-radius: 5px;
+  background: var(--i);
+  background-size: cover;
+  box-shadow:0 0 20px #ff0090bb;
+  transition: 0.2s;
+}
+
+.content{
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background: #0000008d;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.title-card{
+  font-size: 2.6em;
+  color: #ff0090;
+}
+
+.title-link{
+  font-size: 2em;
+  color: #fa6abc;
+}
+
+.card:hover {
+  width: 520px;
+  height: 620px;
+  border: 2px solid #ff0090; 
+  box-shadow:0 0 50px #ff0090af;
+}
+.card:hover .content{
+  opacity: 1;
 }

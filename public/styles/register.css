@@ -44,7 +44,7 @@ header{
 }
 
 .volver:hover {
-  box-shadow: 0 0 10px #000000c8;
+  box-shadow: 0 0 15px #ff0090;
   background-color: #fa6abc;
 }
 

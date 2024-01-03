@@ -16,21 +16,25 @@
 <body>
 
   <header class="header">
-    <h2 class="logo">Menú</h2>
-    <p class="logo">Hola, <%= @user.username %>!</p>
+    <a href="/" class="volver"> Salir </a>
+    <p class="logo">
+      Hola <a href="profile" class="name" title="Modifica tu perfil aquí"><%= @user.username %></a>! 
+    </p>
   </header>
 
-  <section class="Question_Box">
-    <div class="form-box login">    
-
-      <a class="game" href="/deportivo" > Ropa deportiva </a>
-      <a class="game" href="/lenceria"> Lenceria </a>
-      <a class="game" href="/profile"> Mi perfil </a>
-      <a href=<%="/logout"%> class="btnOut"> Cerrar Sesion </a>
-
+  <section class="card" style="--i:url(/front/sport.jpeg)">
+    <div class="content">
+      <h2 class="title-card"> Ropa deportiva </h2>
+      <a class="title-link" href="/deportivo" > Ingresar </a>
     </div>
   </section>
-  
+
+  <section class="card" style="--i:url(/front/lencery.jpeg)">
+    <div class="content">
+      <h2 class="title-card"> Lenceria </h2>
+      <a class="title-link" href="/lenceria" > Ingresar </a>
+    </div>
+  </section>  
  
 </body>
 </html>
