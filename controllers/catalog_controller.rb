@@ -2,7 +2,7 @@
 
 # Esta es la clase del controlador de la tienda.
 # Maneja las rutas de la tienda y la compra de hojas/fondos denominados Items.
-class StoreController < Sinatra::Application
+class CatalogController < Sinatra::Application
   before do
     redirect '/' if session[:user_id].nil? && request.path_info != '/'
     @user = User.current_user(:id, session[:user_id]) unless session[:user_id].nil?

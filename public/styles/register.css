@@ -33,19 +33,19 @@ header{
   width: 180px;
   height: 50px;
   text-align: center;
-  background-color: #162938;
+  background-color: #ff0090;
   border-radius: 10px;
   padding: 15px 30px;
   margin:  40px -5px;
   color: #fff;
   text-decoration: none;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  transition: background-color 1s;
+  transition: background-color 0.2s;
 }
 
 .volver:hover {
   box-shadow: 0 0 10px #000000c8;
-  color: #16f7a8;  
+  background-color: #fa6abc;
 }
 
 
@@ -58,10 +58,10 @@ header{
   width: 400px;
   height: 590px;
   background: #0000004d;
-  border: 2px solid rgba(0, 250, 133, 0.222);
+  border: 2px solid rgba(250, 0, 221, 0.222);
   border-radius: 20px;
   backdrop-filter: blur(15px);
-  box-shadow: 0 0 30px rgba(2, 255, 108, 0.303);
+  box-shadow: 0 0 30px rgba(247, 2, 255, 0.303);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,7 +76,7 @@ header{
 
 .form-box h2 {
   font-size: 2em;
-  color: #162938;
+  color: #ff0090;
   text-align: center;
 }
 
@@ -84,7 +84,7 @@ header{
   position: relative;
   width: 100%;
   height: 50px;
-  border-bottom: 2px solid #162938;
+  border-bottom: 2px solid #ff0090;
   margin: 35px 0;
   color: red;
   padding: -100px;
@@ -97,7 +97,7 @@ header{
   left: 5px;
   transform:  translateY(-160%);
   font-size: 1.1em;
-  color: #5cf2b8e7;
+  color: #fae7f2ea;
   font-weight: 500;
   pointer-events: none;
 }
@@ -111,14 +111,14 @@ header{
   border: none;
   outline: none;
   font-size: 1em;
-  color: #5feb9c;
+  color: #fae7f2ea;
   font-weight: 600;
 }
 
 .btn {
   width: 100%;
   height: 45px;
-  background: #162938;
+  background: #ff0090;
   outline: none;
   border: none;
   border-radius: 6px;
@@ -131,8 +131,8 @@ header{
 
 
 .btn:hover {
-  box-shadow: 0 0 10px #5feb9c;
-  color: #5feb9c;
+  box-shadow: 0 0 10px #fa8bcaea;
+  color: #ffffffea;
 }
 
 .image{

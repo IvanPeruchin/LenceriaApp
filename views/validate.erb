@@ -20,7 +20,7 @@
       <h2 class="tittle">INGRESA EL CODIGO</h2>
       <form action="/validate" method="POST"> 
 
-        <div class="input-box">
+        <div class="input-box" <%= 'error' if @code_error %>>
           <input type="Usuario" name="codigo" id="codigo">
         </div>   
 

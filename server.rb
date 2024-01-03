@@ -9,24 +9,19 @@ require 'sinatra/cookies'
 require 'sinatra/reloader' if Sinatra::Base.environment == :development
 
 require './controllers/authentication_controller.rb'
-require './controllers/game_controller'
-require './controllers/store_controller'
-require './controllers/menu_controller'
+require './controllers/catalog_controller'
+require './controllers/admin_controller'
 
 require_relative 'models/user'
-require_relative 'models/question'
-require_relative 'models/option'
-require_relative 'models/asked_question'
-require_relative 'models/answer'
+require_relative 'models/admin'
 require_relative 'models/item'
-require_relative 'models/purchased_item'
+require_relative 'models/catalog'
 
 # Clase principal para definir la aplicacion de Sinatra
 class App < Sinatra::Application
   use AuthenticationController
-  use GameController
-  use MenuController
-  use StoreController
+  use AdminController
+  use CatalogController
 
   enable :sessions
   # Configuracion de la clave secreta de sesion

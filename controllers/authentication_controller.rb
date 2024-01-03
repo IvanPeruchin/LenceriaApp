@@ -49,6 +49,7 @@ class AuthenticationController < Sinatra::Application
       user = User.current_user(:id, session[:user_id])
       user.update_column(:valid_email, true)
     end
+    # ------------------ ver de ingresar codigo hasta 3 veces, sino reenviar codigo
     redirect '/menu'
   end
 
@@ -72,7 +73,7 @@ class AuthenticationController < Sinatra::Application
   def create_user
     redirect '/register' unless passwords_match
     user_attributes = { username: params[:username], password: hash_password(params[:password]),
-                        email: params[:email], birthdate: params[:birthdate], leaf_id: 6, background_id: 10 }
+                        email: params[:email]}
     @user = User.create(user_attributes)
     if @user.save
       initialize_user_settings(@user)
@@ -91,8 +92,5 @@ class AuthenticationController < Sinatra::Application
   def initialize_user_settings(user)
     session[:user_id] = user.id
     send_verificated_email(user.email, session[:code])
-    PurchasedItem.create(user_id: user.id, item_id: 6)
-    PurchasedItem.create(user_id: user.id, item_id: 10)
-    Item.item_default(session)
   end
 end

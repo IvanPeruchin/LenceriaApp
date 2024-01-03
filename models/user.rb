@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true, length: { minimum: 3, message: 'username must be at least 3 characters' }
   validates :password, presence: true, length: { minimum: 6, message: 'password must be at least 6 characters' }
-  validates :dni, presence: true
   validates :email, presence: true,
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: 'invalid email format' }
 
