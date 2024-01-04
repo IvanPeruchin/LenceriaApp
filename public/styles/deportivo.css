@@ -1,0 +1,55 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('/front/fondo.jpg');
+}
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.volver {  
+  display: block;
+  width: 180px;
+  height: 50px;
+  text-align: center;
+  background-color: #ff0090;
+  border-radius: 10px;
+  padding: 15px 30px;
+  margin:  10px 5px;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s;
+}
+
+.volver:hover {
+  box-shadow: 0 0 10px #000000c8;
+  background-color: #fa6abc;
+}
+
+
+
