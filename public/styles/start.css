@@ -103,11 +103,12 @@ html{
 
 /* ------- BANNER --------- */
 
-.banner{
-  background-image: linear-gradient(100deg, #000000c8, #00000000), url('/front/banner.jpeg');
+.banner {
+  background-image: linear-gradient(100deg, #000000c8, #00000000), url('/front/banner1.jpeg');
   background-size: 110%;
   background-repeat: no-repeat;
-  background-position:0 50%;
+  background-position: 0 50%;
+  transition: background-image 0.5s ease-in-out;
   height: 60rem;
 }
 
@@ -120,6 +121,7 @@ html{
 .content-banner p{
   color: var(--ligth-color);
   font-size: 3.2rem;
+  transition: opacity 0.5s ease-in-out;
   font-weight: 200;
 }
 
