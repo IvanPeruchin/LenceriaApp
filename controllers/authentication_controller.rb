@@ -53,6 +53,14 @@ class AuthenticationController < Sinatra::Application
     redirect '/menu'
   end
 
+  get '/deportivo' do
+    erb :deportivo
+  end
+
+  get '/lenceria' do 
+    erb :lenceria
+  end
+
   #------------------------------------------------------ METODOS --------------------------------------------------------------#
 
   # Metodo para iniciar sesion.
