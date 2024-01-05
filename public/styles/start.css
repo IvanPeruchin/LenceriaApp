@@ -129,6 +129,13 @@ html{
 }
 
 /* -------- MAIN ---------- */
+.heading{
+  text-align: center;
+  font-weight: 300;
+  padding-bottom: 3rem;
+  font-size: 3rem;
+}
+
 .main-content{
   background-color: var(--background-color);
 }
@@ -167,12 +174,15 @@ html{
 .container-categories{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
   gap: 3rem;
+  padding-bottom: 6rem;
+
 }
 
 .card-category{
-  height: 40rem;
-  width: 36rem;
+  height: 35rem;
+  width: 60rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -184,7 +194,7 @@ html{
 .category-sport{
   background-image: url(/front/sport.jpeg);
   background-size: cover;
-  filter: blur(0.9px);
+  filter: blur(0.6px);
   transition: 1s;
 }
 
@@ -197,7 +207,8 @@ html{
 .category-lencery{
   background-image: url(/front/lencery.jpeg);
   background-size: cover;
-  filter: blur(0.9px);
+  background-position: 0 50%;
+  filter: blur(0.6px);
   transition: 0.3s;
 }
 
@@ -211,6 +222,7 @@ html{
   color: var(--background-color);
   font-size: 3.3rem;
   transition: 0.2s;
+  text-transform: capitalize;
 }
 
 .card-category p:hover {
@@ -232,5 +244,24 @@ html{
   font-size: 3.3rem;
   transition: 0.2s;
 }
+
+/* ---------- Footer ----------- */
+.footer{
+  background-color: var(--ligth-color);
+}
+
+.conteiner-footer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.footer-info{
+  font-size: 1.8rem;
+  font-weight: 200;
+}
+
 
 
