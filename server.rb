@@ -8,18 +8,21 @@ require 'sinatra/activerecord'
 require 'sinatra/cookies'
 require 'sinatra/reloader' if Sinatra::Base.environment == :development
 
-require './controllers/authentication_controller.rb'
+require './controllers/start_controller.rb'
 require './controllers/catalog_controller'
 require './controllers/admin_controller'
 
 require_relative 'models/user'
 require_relative 'models/admin'
 require_relative 'models/item'
-require_relative 'models/catalog'
+require_relative 'models/item_description'
+require_relative 'models/color'
+require_relative 'models/size'
+
 
 # Clase principal para definir la aplicacion de Sinatra
 class App < Sinatra::Application
-  use AuthenticationController
+  use StartController
   use AdminController
   use CatalogController
 

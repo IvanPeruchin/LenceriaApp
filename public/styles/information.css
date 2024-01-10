@@ -1,3 +1,6 @@
+/*@import url(https://fonts.google.com/specimen/Poppins?preview.text=ECO
+-TREE&preview.text_type=custom);*/
+
 :root{
   --primary-color: #fd219e;
   --link-color: #ff0090;
@@ -89,7 +92,7 @@ html{
   text-decoration: none;
   font-size: 1.6rem;
   color: var(--dark-color);
-  font-weight: 600;
+  font-weight: 400;
   padding: 0 2.3rem;
   position: relative;
 }
@@ -98,116 +101,57 @@ html{
   color: var(--background-color);
 }
 
-
-/* --------- MAIN ---------- */
-
-.main-content{
+/* --------- INFORMATION ----------- */
+.info-general{
   background-color: var(--background-color);
 }
 
-.box{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-  padding: 3rem 0;
-}
-
-.box-tittle{
-  color: #000000;
-  font-size: 3rem;
-  padding: 3rem 0;
-}
-
-.box-tittle h1{
-  color: #000000;
-  text-align: center;
-}
-
-
-.box-shop {
+.information{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  border-radius: 1rem;
-  box-shadow: 2px 5px 10px #f363ad55;
-  width: 34rem;
+  align-items:stretch
+}
+
+.tittle-info{
+  font-size: 10rem;
+  padding: 3rem 0;
+}
+
+.subtittle-info{
+  position: relative;
+  font-size: 5rem;
   padding: 2rem 0;
-  margin-bottom: 3rem;
-  position: relative;
-  transition: 0.5s;
-}
-
-.box-shop:hover {
-  box-shadow: 0 0 15px #f363adb8;
-}
-
-.box-content{
-  position: relative;
-}
-
-
-.box-image{
-  width: 30rem;
-  height: 40rem;
-  margin-bottom: 2rem;
-}
-
-.not-stock {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30rem;
-  height: 40rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(110deg, #580029, #00000000);
-  transition: 0.5s;
-}
-
-.not-stock p {
-  font-size: 3rem;
-  font-weight: 600;
   color: var(--details-color);
-  transition: 0.5s;
 }
 
-.not-stock p:hover{
-  font-size: 3.5rem;
-}
-
-.box-description{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.box-description h3 {
-  font-size: 2rem;
+.text-info{
+  font-size: 1.5rem;
   color: var(--dark-color);
 }
 
-.box-description h4 {
-  font-size: 1.3rem;
-  color: var(--link-color);
+.information span{
+  font-size: 1.5rem;
+  color: var(--details-color);
 }
 
-.box-description-no_stock {
+
+/* ---------- Footer ----------- */
+.footer{
+  background-color: var(--ligth-color);
+}
+
+.conteiner-footer{
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-} 
-
-.box-description-no_stock h3{
-  font-size: 2rem;
-  color: #0000006d;
-} 
-
-.box-description-no_stock h4{
-  font-size: 1.3rem;
-  color: #0000006d;
+  padding: 2rem;
 }
+
+.footer-info{
+  font-size: 1.8rem;
+  font-weight: 200;
+}
+
 

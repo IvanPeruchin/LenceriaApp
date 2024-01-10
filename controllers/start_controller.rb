@@ -7,7 +7,7 @@ require_relative '../methods'
 # Esta es la clase maneja la autenticacion de usuarios,
 # incluyendo el inicio de sesion, registro, validaciln de correo electronico
 # y gestion de sesiones de usuario.
-class AuthenticationController < Sinatra::Application
+class StartController < Sinatra::Application
   # Ruta para mostrar la pagina de inicio de sesion.
   get '/login' do
     erb :login
@@ -19,18 +19,6 @@ class AuthenticationController < Sinatra::Application
     check_user(@user)
   end
 
-  # Ruta para mostrar la pagina de registro de usuario.
-  get '/register' do
-    erb :register
-  end
-
-  # Maneja la solicitud POST de registro de usuario.
-  post '/register' do
-    session[:code] = generate_random_code(6)
-
-    redirect '/register' unless User.find_by(username: params[:username]).nil?
-    create_user
-  end
 
   # Ruta para cerrar sesion.
   get '/logout' do
@@ -54,11 +42,21 @@ class AuthenticationController < Sinatra::Application
   end
 
   get '/deportivo' do
+    @item = Item.where(category: 'sport')
     erb :deportivo
   end
 
   get '/lenceria' do 
+    @item = Item.where(category: 'lenceria')
     erb :lenceria
+  end
+
+  get '/payments'do
+    erb :payments
+  end
+
+  get '/information' do
+    erb :information
   end
 
   #------------------------------------------------------ METODOS --------------------------------------------------------------#

@@ -178,7 +178,7 @@ html{
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   gap: 3rem;
-  padding-bottom: 6rem;
+  padding-bottom: 9rem;
 
 }
 
@@ -245,6 +245,43 @@ html{
   text-decoration: none;
   font-size: 3.3rem;
   transition: 0.2s;
+}
+
+/* ---------- PAYMENTS --------- */
+.payment{
+  background-color: var(--background-color);
+}
+
+.container-payment{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  padding-bottom: 5rem;
+}
+
+.pay-method{
+  display: flex;
+  width: 30rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 0;
+  border: 3px var(--details-color) solid;
+  border-radius: 2rem;
+  background-color: #fa6abc36;
+}
+
+.pay-method p{
+  font-size: 1.3rem;
+  color: var(--details-color);
+}
+
+.tittle-payment{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.7rem;
+  columns: var(--dark-color);
 }
 
 /* ---------- Footer ----------- */

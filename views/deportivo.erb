@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Store - Eco-Tree</title>
+    <title>Lenceria</title>
     <link rel="stylesheet" href="/styles/deportivo.css" />
-    <link rel="icon" href="/front/miniatura.png"/>
+    <link rel="icon" href="/front/Mini.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -11,10 +11,55 @@
 
   <body>
     
-   <header>
-      <a href="/menu" class="volver">Volver</a>
+  <header>
+    <div class="container-head">
+      <div class="container head">
+        <div class="tittle">
+          <a href="/">
+            <img class="image" src="/front/Logo.png" alt="logo">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-navbar">
+      <div class="container navbar">
+        <ul class="menu">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/information">Informacion</a></li>
+        </ul>
+      </div>
+    </div>
   </header>
 
-  <p> SOY LA TIENDA DEPORTIVA</p>
+  <main class="main-content">
+    <div class="container">
+      <div class="box-tittle">
+        <h1>
+          CATALOGO
+        </h1>  
+      </div>
+      <section class="box">
+        <% @item.each do |item| %>
+          <div class="box-shop">
+            <div class="box-content">
+              <img src="<%= item.image %>" class="box-image"/>
+              <% if not item.in_stock %>
+                <div class="not-stock">
+                  <p>SIN STOCK</p>
+                </div>
+              <% end %>
+            </div>
+            <div class="box-description<%= item.in_stock ? '' : '-no_stock' %>">
+              <h3 class="box-name"><%= item.name %></h3>
+              <h4>$<%= item.price %> </h4>
+            </div>
+          </div>
+        <% end %>
+      </section>      
+      
+    </div>
+  </main>
+
   </body>
 </html>

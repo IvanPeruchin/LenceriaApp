@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_03_202604) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_10_005157) do
   create_table "colors", force: :cascade do |t|
     t.string "name"
   end
@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_03_202604) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.string "price"
+    t.float "price"
     t.string "category"
     t.string "image"
     t.boolean "in_stock"
