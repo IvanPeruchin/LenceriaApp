@@ -41,18 +41,10 @@ class StartController < Sinatra::Application
     redirect '/menu'
   end
 
-  get '/deportivo' do
-    @item = Item.where(category: 'sport')
-    erb :deportivo
-  end
-
-  get '/lenceria' do 
-    @item = Item.where(category: 'lenceria')
-    erb :lenceria
-  end
-
-  get '/payments'do
-    erb :payments
+  get '/categories' do 
+    @item_selected = params[:category]
+    @item = Item.where(category: @item_selected)
+    erb :categories
   end
 
   get '/information' do
