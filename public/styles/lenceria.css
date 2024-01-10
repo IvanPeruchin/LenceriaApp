@@ -102,7 +102,7 @@ html{
 /* --------- MAIN ---------- */
 
 .main-content{
-  background-color: var(--background-color);
+  background-color: white;
 }
 
 .box{
@@ -138,6 +138,7 @@ html{
 }
 
 .box-shop:hover {
+  background-color:#fbf2f844 ;
   box-shadow: 0 0 15px #f363adb8;
 }
 
