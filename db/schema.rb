@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_10_005157) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_10_155539) do
   create_table "colors", force: :cascade do |t|
     t.string "name"
   end
@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_10_005157) do
     t.integer "item_id", null: false
     t.integer "color_id", null: false
     t.integer "size_id", null: false
+    t.string "category"
     t.index ["color_id"], name: "index_item_descriptions_on_color_id"
     t.index ["item_id"], name: "index_item_descriptions_on_item_id"
     t.index ["size_id"], name: "index_item_descriptions_on_size_id"

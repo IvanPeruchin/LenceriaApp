@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iniciar Sesion - Eco-Tree</title>
+  <title>Iniciar Sesion</title>
   <link rel="Stylesheet" href="/styles/login.css">
-  <link rel="icon" href="/front/miniatura.png"/>
+  <link rel="icon" href="/front/Mini.png"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,41 +15,34 @@
 
 <body>
 
-  <header>
-    <a href="/" class="volver"> Volver </a>
+   <header>
+    <div class="container-head">
+      <div class="container head">
+        <a href="/">
+          <img class="image" src="/front/Logo.png" alt="logo">
+        </a>
+      </div>
+    </div>
+
   </header>
 
-  <img class="image" src="/front/logo.png" alt="logo">
 
   <div class="crear_usuario">
-    <div class="form-box login">
+    <div class="container login">
       <h2>INICIAR SESION</h2>
       <form action="/login" method="POST"> 
-
-        <div class="input-box <%= 'error' if @account_error %>">
+        <div class="input-box">
           <input type="Usuario" name="username" id="username">
           <label>Usuario</label>
-          <span id="account-error" class="error-message"><%= @account_error %></span>
         </div>   
 
-        <div class="input-box <%= 'error' if @password_error %>">
+        <div class="input-box">
           <input type="password" name="password" id="password">
           <label>Contraseña</label>
-          <span id="password-error" class="error-message"><%= @password_error %></span>
         </div>  
-
-        <%# <section class="checkbox"> 
-          <input class="login-register" type="checkbox" id="miCheckbox">
-          <label class="login-register" for="miCheckbox">Recordarme</label>
-        </section>       %>
 
         <button type="submit" class="btn"> Ingresar </button>
 
-        <div class="login-register">
-          <p>No tienes una cuenta?
-            <a href="/register" class="register"> Registrate </a>
-          </p>
-        </div>
       </form>
     </div>
   </div>

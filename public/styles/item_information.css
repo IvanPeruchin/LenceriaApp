@@ -1,0 +1,182 @@
+/*@import url(https://fonts.google.com/specimen/Poppins?preview.text=ECO
+-TREE&preview.text_type=custom);*/
+
+:root{
+  --primary-color: #fd219e;
+  --link-color: #ff0090;
+  --ligth-color: #fa6abc;
+  --details-color: #ee1485;
+  --background-color : #fef1f9;
+  --dark-color: #580029;
+}
+
+html{
+  font-size: 62.5%;
+  font-family: 'Poppins', sans-serif;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 170rem;
+  margin: 0 auto;
+}
+
+/* --------- HEADER ---------- */
+.container-head{
+  background-color: var(--background-color);
+}
+
+.head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 0;
+}
+
+.tittle{
+  position: relative;
+  left: 36%;
+}
+
+.image {
+  width: 350px;
+}
+
+/* ---------- NAVBAR ----------- */
+
+.container-navbar{
+  background-color: var(--ligth-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+  padding: 1rem 0;
+}
+
+.menu{
+  display: flex;
+  gap: 2rem;
+}
+
+.menu li{
+  list-style: none;
+}
+
+.menu a{
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: var(--dark-color);
+  font-weight: 400;
+  padding: 0 2.3rem;
+  position: relative;
+}
+
+.menu a:hover{
+  color: var(--background-color);
+}
+
+/* --------- INFORMATION ----------- */
+.info-general{
+  background-color: var(--background-color);
+}
+
+
+
+.information{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:stretch
+}
+
+.tittle-info{
+  font-size: 5rem;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.item-info{
+  display: flex;
+  justify-content:center;
+  align-items: flex-start;
+  margin-bottom: 5rem;
+  gap: 12rem;
+}
+
+.image-info{
+  width: 65rem;
+  height: 85rem;
+  object-fit: cover;
+  padding: 1rem;
+  border-radius: 2rem;
+  box-shadow: 1px 3px 5px #f2b5d8a5;
+  /* background-color: #58002919; */
+}
+
+.item-description{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 40rem;
+  height: 50rem;
+  padding: 2rem;
+  gap: 6rem;
+  box-shadow: 1px 2px 2px #f2b5d8a5;
+}
+
+.item-description h3{
+  font-size: 3rem;
+}
+
+.info-content{
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.sizes{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  font-size: 2rem;
+}
+
+.colors{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  font-size: 1.8rem;
+}
+
+.no-stock{
+  color: #ee1485;
+  font-size: 2.2rem;
+}
+
+/* ---------- Footer ----------- */
+.footer{
+  background-color: var(--ligth-color);
+}
+
+.conteiner-footer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.footer-info{
+  font-size: 1.8rem;
+  font-weight: 200;
+}
+
+

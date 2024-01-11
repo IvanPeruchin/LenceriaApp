@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require 'sinatra/base'
 require 'bcrypt'
 require 'mail'
 require_relative '../methods'
@@ -42,13 +42,23 @@ class StartController < Sinatra::Application
   end
 
   get '/categories' do 
-    @item_selected = params[:category]
+    session[:item] = params[:category]
+    @item_selected = session[:item]
     @item = Item.where(category: @item_selected)
     erb :categories
   end
 
   get '/information' do
     erb :information
+  end
+
+  get '/item_information/:id' do
+    @item_selected = session[:item]
+    @item = Item.find(params[:id])
+    # SOLO HACER ESTO PARA PROBAR Y ESTILAR, LUEGO CAMBIAR
+    @sizes = Size.where(category: @item_selected)
+    @colors = Color.all
+    erb :item_information
   end
 
   #------------------------------------------------------ METODOS --------------------------------------------------------------#
