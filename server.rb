@@ -9,7 +9,6 @@ require 'sinatra/cookies'
 require 'sinatra/reloader' if Sinatra::Base.environment == :development
 
 require './controllers/start_controller.rb'
-require './controllers/catalog_controller'
 require './controllers/admin_controller'
 
 require_relative 'models/user'
@@ -24,7 +23,6 @@ require_relative 'models/size'
 class App < Sinatra::Application
   use StartController
   use AdminController
-  use CatalogController
 
   enable :sessions
   # Configuracion de la clave secreta de sesion

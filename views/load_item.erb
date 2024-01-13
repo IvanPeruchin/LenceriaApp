@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrador</title>
+  <link rel="stylesheet" href="/styles/admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+  <link rel="icon" href="/front/Mini.png"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+</head>
+
+<body>
+  
+  <header>
+    <div class="container-navbar">
+      <div class="container navbar">
+        <ul class="menu">
+          <<li><a href="/load_item"  >Cargar prenda</a></li>
+          <li><a href="/modifie_item"  >Modificar prenda</a></li>
+          <li><a href="/delete_item"  >Eliminar prenda</a></li>
+          <li><a href="/">Salir</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container carga">
+      <h1 class="carga-tittle">CARGA DE PRODUCTO</h1>
+      <section class="carga-item">
+        <form action="/load_item" method="post">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="price">Precio:</label>
+          <input type="text" id="price" name="price" required>
+
+          <label for="description">Descripción:</label>
+          <input type="text" id="description" name="description" required>
+
+          <label for="category">Categoría:</label>
+          <select id="category" name="category" required>
+            <option value="lenceria">Lenceria</option>
+            <option value="sport">Ropa deportiva</option>
+          </select>
+
+          <label for="color">Color:</label>
+          <select id="color" name="colors[]" multiple required>
+            <!-- cambiar aca por lo que hay en la base de datos -->
+            <option value="Rojo">Rojo</option>
+            <option value="Azul">Azul</option>
+            <option value="Verde">Verde</option>
+          </select>
+
+          <label for="size">Talle:</label>
+          <select id="size" name="sizes[]" multiple required>
+            <!-- cambiar aca por lo que hay en la base de datos -->
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+
+          <button type="submit">Guardar Prenda</button>
+        </form>
+      </section>
+    </div>
+  </main>
+  
+
+  <script>
+    $(document).ready(function() {
+      $('#color').select2();
+      $('#size').select2();
+    });
+  </script>
+
+  <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+</body>
+</html>
