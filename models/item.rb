@@ -2,5 +2,5 @@
 
 # Modelo para representar los productos de la tienda
 class Item < ActiveRecord::Base
-
+  has_many :item_descriptions, dependent: :destroy
 end

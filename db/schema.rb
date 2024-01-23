@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_13_051206) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_14_144245) do
   create_table "colors", force: :cascade do |t|
     t.string "name"
   end
@@ -19,7 +19,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_13_051206) do
     t.integer "item_id", null: false
     t.integer "color_id"
     t.integer "size_id"
-    t.string "category"
     t.index ["color_id"], name: "index_item_descriptions_on_color_id"
     t.index ["item_id"], name: "index_item_descriptions_on_item_id"
     t.index ["size_id"], name: "index_item_descriptions_on_size_id"
@@ -45,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_13_051206) do
     t.boolean "valid_email", default: false
   end
 
-  add_foreign_key "item_descriptions", "colors"
+  add_foreign_key "item_descriptions", "colors", on_delete: :cascade
   add_foreign_key "item_descriptions", "items"
-  add_foreign_key "item_descriptions", "sizes"
+  add_foreign_key "item_descriptions", "sizes", on_delete: :cascade
 end

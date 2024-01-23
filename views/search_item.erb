@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Administrador</title>
-  <link rel="Stylesheet" href="/styles/modifie_item.css">
+  <link rel="Stylesheet" href="/styles/delete_item.css">
   <link rel="icon" href="/front/Mini.png"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
     <div class="container-navbar">
       <div class="container navbar">
         <ul class="menu">
-          <li><a href="/load_item"  >Cargar prenda</a></li>
+           <li><a href="/load_item"  >Cargar prenda</a></li>
           <li><a href="/modifie_item"  >Modificar prenda</a></li>
           <li><a href="/search_item"  >Eliminar prenda</a></li>
           <li><a href="/"  >Salir</a></li>
@@ -31,25 +31,15 @@
   
   <main class="main-content">
     <div class="container carga">
-      <h1 class="carga-tittle">MODIFICAR PRODUCTO</h1>
+      <h1 class="carga-tittle">ELIMINAR PRODUCTO</h1>
       <section class="carga-item">
-        <form action="/modifie_item" method="post">
+        <form action="/search_item" method="post">
           <label for="id">Codigo de producto (ID):</label>
           <input type="text" id="id" name="id" required>
 
           <button type="submit">Buscar</button>
         </form>
       </section>
-      <section class="aumento">
-        <form action="/increase_item" method="post">
-          <label for="id">Porcentaje de aumento: % </label>
-          <input type="text" id="id" name="id" required>
-          <p>El aumento se aplicara a todos los productos</p>
-
-          <button type="submit">Aumentar</button>
-        </form>
-      </section>
-
     </div>
   </main>
  

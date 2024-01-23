@@ -40,9 +40,13 @@ class StartController < Sinatra::Application
   get '/item_information/:id' do
     @item_selected = session[:item]
     @item = Item.find(params[:id])
-    # SOLO HACER ESTO PARA PROBAR Y ESTILAR, LUEGO CAMBIAR
-    @sizes = Size.where(category: @item_selected)
-    @colors = Color.all
+
+    item_descriptions = ItemDescription.where(item_id: @item.id)
+    colors_id = item_descriptions.map { |item_desc| item_desc&.color_id}.compact
+    sizes_id = item_descriptions.map { |item_desc| item_desc&.size_id }.compact
+    @colors = colors_id.map { |item_color| Color.find_by(id: item_color)}
+    @sizes = sizes_id.map { |item_sizes| Size.find_by(id: item_sizes)}
+    
     erb :item_information
   end
 

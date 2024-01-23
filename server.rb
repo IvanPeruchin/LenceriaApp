@@ -11,8 +11,6 @@ require 'sinatra/reloader' if Sinatra::Base.environment == :development
 require './controllers/start_controller.rb'
 require './controllers/admin_controller'
 
-require_relative 'models/user'
-require_relative 'models/admin'
 require_relative 'models/item'
 require_relative 'models/item_description'
 require_relative 'models/color'
