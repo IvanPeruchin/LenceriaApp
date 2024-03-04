@@ -34,53 +34,60 @@
   <main class="main-content">
     <div class="container carga">
       <h1 class="carga-tittle">CARGA DE PRODUCTO</h1>
-      <section class="carga-item">
-        <form action="/load_item" method="post" enctype="multipart/form-data">
-          <label for="name">Nombre:</label>
-          <input type="text" id="name" name="name" required>
+      <form action="/load_item" method="post" enctype="multipart/form-data" class="carga-form">
 
-          <label for="price">Precio:</label>
-          <input type="text" id="price" name="price" required>
+          <div class="input-box">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required>
+          </div>
 
-          <label for="description">Descripción:</label>
-          <input type="text" id="description" name="description" required>
+          <div class="input-box">
+            <label for="price">Precio</label>
+            <input type="text" id="price" name="price" required>
+          </div>
 
-          <label for="category">Categoría:</label>
-          <select id="category" name="category" required>
-            <option value="lenceria">Lenceria</option>
-            <option value="sport">Ropa deportiva</option>
-          </select>
+          <div class="input-box">
+            <label for="description">Descripción</label>
+            <input type="text" id="description" name="description" required>
+          </div>
 
-          <label for="color">Color:</label>
-          <select id="color" name="colors[]" multiple required>
-            <% @colors.each do |color| %>            
-              <option value="<%= color.name %>"><%= color.name %></option>
-            <% end %>            
-          </select>
+          <div class="input-box-select">
+            <label for="category">Categoría</label>
+            <select id="category" name="category" required>
+              <option value="lenceria">Lenceria</option>
+              <option value="sport">Ropa deportiva</option>
+            </select>
+          </div>
 
-          <label for="size">Talle:</label>
-          <select id="size" name="sizes[]" multiple required>
-           <% @sizes.each do |size| %>            
-              <option value="<%= size.number %>"><%= size.number %></option>
-            <% end %>
-          </select>
+          <div class="input-box-option">
+            <label for="color">Color</label>
+            <select id="color" name="colors[]" multiple required>
+              <% @colors.each do |color| %>            
+                <option value="<%= color.name %>"><%= color.name %></option>
+              <% end %>            
+            </select>
+          </div>
 
-          <label for="file">Selecciona una foto:</label>
-          <input type="file" name="file" id="file" accept="image/*">
+          <div class="input-box-option">
+            <label for="size">Talle</label>
+            <select id="size" name="sizes[]" multiple required>
+             <% @sizes.each do |size| %>            
+                <option value="<%= size.number %>"><%= size.number %></option>
+              <% end %>
+            </select>
+          </div>
 
-          <button type="submit">Guardar Prenda</button>
+          <div class="input-box-picture">
+            <label for="file">Selecciona una foto</label>
+            <input type="file" name="file" id="file" accept="image/*">
+          </div>
+
+          <button type="submit" class="btn">Guardar Prenda</button>
         </form>
-      </section>
+      
     </div>
   </main>
   
-
-  <script>
-    $(document).ready(function() {
-      $('#color').select2();
-      $('#size').select2();
-    });
-  </script>
 
   <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
 </body>

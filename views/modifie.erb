@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Administrador</title>
-  <link rel="Stylesheet" href="/styles/modifie_item.css">
+  <link rel="Stylesheet" href="/styles/modifie.css">
   <link rel="icon" href="/front/Mini.png"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,10 +31,21 @@
   </header>
 
   <main class="main-content">
-    <div class="container carga">
-      <h1 class="carga-tittle">MODIFICAR PRODUCTO</h1>
-      <h3> Su producto: </h3>
-      <p>Nombre actual: <%= @item.name %> <br> Precio actual: $<%= @item.price %> <br>Descripcion actual:  <%= @item.description %> <br> En stock: <%= @item.in_stock ? " Si" : "No" %></p>
+    <div class="container item-verify">
+      <h1>MODIFICAR PRODUCTO</h1>
+      <ul class="items">
+        <li><p> Nombre actual: <%= @item.name %></p></li>
+        <li><p> Precio actual: $<%= @item.price %></p></li>
+        <li><p> Descripcion actual:  <%= @item.description %> </p></li>
+        <li><p> En stock: <%= @item.in_stock ? " Si" : "No" %> </p></li>
+        <li><p> Imagen: </p> <img src="<%= @item.image %>" alt=""></div></li>
+        <li><p> Colores: <%= @item_color.each do |color|%>
+                            color.name
+                          <%= end %>
+            </p>
+        </li>
+        <li></li>
+      </ul>
     </div>
     <div class="container carga">
       <h1 class="carga-tittle">ACTUALIZA TUS DATOS</h1>

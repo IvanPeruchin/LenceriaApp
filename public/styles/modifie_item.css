@@ -87,11 +87,79 @@ html{
 /* ------- MENU -------- */
 
 .main-content {
-  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
 }
 
 
+.carga{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100rem;
+  height: 60rem;
+  box-shadow: 3px 5px 15px var(--ligth-color);
+  border-radius: 1rem;
+  background-color: var(--background-color);
+  margin: 5rem 0;
+}
 
+.carga-tittle{
+  font-size: 6rem;
+  text-align: center;
+  padding: 5rem 0;
+  margin-bottom: 10rem;
 
+}
 
+.carga-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
 
+.input-box{ 
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 10rem;
+  border-bottom: 1px solid var(--primary-color);
+  margin: 5rem 0;
+  font-size: 5rem;
+}
+
+.input-box input{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 4rem;
+  color: var(--details-color);
+}
+
+.input-box label{
+  position: absolute;
+  left: 0.5rem;
+  transform: translateY(-90%);
+  color: black;
+  font-size: 5rem;
+  font-weight: 500;
+}
+
+/* --- Boton */
+
+.btn{
+  width: 50%;
+  height: 5rem;
+  background: var(--link-color);
+  color: var(--background-color);
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+}

@@ -17,3 +17,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
   setInterval(cambiarContenido, 5000); // Cambiar contenido cada 10 segundos
 });
+

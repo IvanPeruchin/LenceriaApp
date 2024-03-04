@@ -32,23 +32,22 @@
   <main class="main-content">
     <div class="container carga">
       <h1 class="carga-tittle">MODIFICAR PRODUCTO</h1>
-      <section class="carga-item">
-        <form action="/modifie_item" method="post">
-          <label for="id">Codigo de producto (ID):</label>
-          <input type="text" id="id" name="id" required>
-
-          <button type="submit">Buscar</button>
+        <form action="/modifie_item" method="post" class="carga-item">
+          <div class="input-box">
+            <label for="id">Codigo de producto (ID):</label>
+            <input type="text" id="id" name="id" required>
+          </div>
+          <button type="submit" class="btn" >Buscar</button>
         </form>
-      </section>
-      <section class="aumento">
+      <%# <section class="aumento">
         <form action="/increase_item" method="post">
           <label for="id">Porcentaje de aumento: % </label>
           <input type="text" id="id" name="id" required>
           <p>El aumento se aplicara a todos los productos</p>
 
-          <button type="submit">Aumentar</button>
+          <button type="submit" >Aumentar</button>
         </form>
-      </section>
+      </section> %>
 
     </div>
   </main>

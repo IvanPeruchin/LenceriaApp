@@ -70,6 +70,8 @@ class AdminController < Sinatra::Application
     @item = Item.find_by(id: session[:id_item])
     @colors = Color.all
     @sizes = Size.all
+    color
+    @item_color = ItemDescription.find_by(id: session[:id_item]).color
 
     erb :modifie
   end

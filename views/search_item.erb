@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Administrador</title>
-  <link rel="Stylesheet" href="/styles/delete_item.css">
+  <link rel="Stylesheet" href="/styles/modifie_item.css">
   <link rel="icon" href="/front/Mini.png"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,11 +33,12 @@
     <div class="container carga">
       <h1 class="carga-tittle">ELIMINAR PRODUCTO</h1>
       <section class="carga-item">
-        <form action="/search_item" method="post">
-          <label for="id">Codigo de producto (ID):</label>
-          <input type="text" id="id" name="id" required>
-
-          <button type="submit">Buscar</button>
+        <form action="/search_item" method="post" class="carga-item">
+          <div class="input-box">
+            <label for="id">Codigo de producto (ID):</label>
+            <input type="text" id="id" name="id" required>
+          </div>
+          <button type="submit"  class="btn">Buscar</button>
         </form>
       </section>
     </div>
