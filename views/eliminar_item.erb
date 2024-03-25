@@ -20,8 +20,8 @@
       <div class="container navbar">
         <ul class="menu">
            <li><a href="/load_item"  >Cargar prenda</a></li>
-          <li><a href="/modifie_item"  >Modificar prenda</a></li>
-          <li><a href="/search_item"  >Eliminar prenda</a></li>
+          <li><a href="/search_item/modificar"  >Modificar prenda</a></li>
+          <li><a href="/search_item/eliminar"  >Eliminar prenda</a></li>
           <li><a href="/"  >Salir</a></li>
         </ul>
       </div>
@@ -35,7 +35,7 @@
       <h3> Su producto: </h3>
       <p>Nombre: <%= @item.name %> <br> Precio: $<%= @item.price %> <br>Descripcion: <%= @item.description %> </p>
       <section class="carga-item">
-        <form action="/delete_item" method="post">
+        <form action="/eliminar_item" method="post">
           <input type="hidden" name="_method" value="delete">
           <button type="submit">Borrar</button>
         </form>

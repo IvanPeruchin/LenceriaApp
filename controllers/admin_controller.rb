@@ -43,37 +43,37 @@ class AdminController < Sinatra::Application
 
   post '/search_item' do
     session[:id_item] = params[:id]
-    redirect '/delete_item'
+    redirect "/#{params[:mode]}_item"
   end
 
-  get '/delete_item' do
-    @item = Item.find_by(id: session[:id_item])
-    erb :delete_item
+  get '/eliminar_item' do
+    if item_exist(session[:id_item])
+      @item = Item.find_by(id: session[:id_item])
+      erb :eliminar_item
+    else 
+      redirect '/admin'
+    end
   end
 
-  delete '/delete_item' do
+  delete '/eliminar_item' do
     item = Item.find(session[:id_item])
     item.destroy
     
-    redirect '/search_item'
+    redirect '/search_item/eliminar'
   end
 
-  get '/modifie_item' do
-    erb :modifie_item
+
+  get '/modificar_item' do
+    if item_exist(session[:id_item])
+      @colors = Color.all
+      @sizes = Size.all
+      erb :modificar_item
+    else 
+      redirect '/admin'
+    end
   end
 
-  post '/modifie_item' do
-    session[:id_item] = params[:id]
-    redirect '/modifie'
-  end
-
-  get '/modifie' do
-    @colors = Color.all
-    @sizes = Size.all
-    erb :modifie
-  end
-
-  post '/modifie' do  
+  post '/modificar_item' do  
     item = Item.find_by(id: session[:id_item])
   
     if params[:file] && params[:file][:filename]
@@ -151,6 +151,12 @@ class AdminController < Sinatra::Application
       ItemDescription.create(item_id: id, color_id: color_id, size_id: size_id)
     end
   end
+
+  # Chequea si ese item existe
+  def item_exist(item_id)
+    return Item.find_by(id: item_id).present?
+  end
+    
     
 
 end
