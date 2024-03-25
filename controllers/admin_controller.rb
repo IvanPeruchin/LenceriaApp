@@ -36,7 +36,8 @@ class AdminController < Sinatra::Application
     redirect '/load_item'
   end
 
-  get '/search_item' do
+  get '/search_item/:option_selected' do
+    @mode = params[:option_selected]
     erb :search_item
   end
 
@@ -66,13 +67,9 @@ class AdminController < Sinatra::Application
     redirect '/modifie'
   end
 
-  get '/modifie' do 
-    @item = Item.find_by(id: session[:id_item])
+  get '/modifie' do
     @colors = Color.all
     @sizes = Size.all
-    color
-    @item_color = ItemDescription.find_by(id: session[:id_item]).color
-
     erb :modifie
   end
 

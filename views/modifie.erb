@@ -31,22 +31,8 @@
   </header>
 
   <main class="main-content">
-    <div class="container item-verify">
-      <h1>MODIFICAR PRODUCTO</h1>
-      <ul class="items">
-        <li><p> Nombre actual: <%= @item.name %></p></li>
-        <li><p> Precio actual: $<%= @item.price %></p></li>
-        <li><p> Descripcion actual:  <%= @item.description %> </p></li>
-        <li><p> En stock: <%= @item.in_stock ? " Si" : "No" %> </p></li>
-        <li><p> Imagen: </p> <img src="<%= @item.image %>" alt=""></div></li>
-        <li><p> Colores: <%= @item_color.each do |color|%>
-                            color.name
-                          <%= end %>
-            </p>
-        </li>
-        <li></li>
-      </ul>
-    </div>
+    
+    
     <div class="container carga">
       <h1 class="carga-tittle">ACTUALIZA TUS DATOS</h1>
       <section class="carga-item">
