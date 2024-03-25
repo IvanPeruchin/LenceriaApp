@@ -78,7 +78,7 @@ class AdminController < Sinatra::Application
   
     if params[:file] && params[:file][:filename]
       filename = params[:file][:filename]
-      target_path = File.join(settings.public_folder, 'front', params[:category], filename)
+      target_path = File.join(settings.public_folder, 'front', item.category , filename)
       item.image = target_path&.sub('/src/public', '')
     end
   
@@ -93,38 +93,31 @@ class AdminController < Sinatra::Application
 
     puts "Received params: #{params.inspect}"
 
-    if not params[:colors]&.empty?
-      get_colors(params[:colors], item.id) 
-    end
-    if params[:sizes]&.empty? 
-      get_sizes(params[:sizes], item.id) 
-    end 
+    item_description = ItemDescription.where(item_id: item.id)
+
+    if params[:colors].present? || params[:sizes].present?
+      update_item_descriptions(params[:colors], params[:sizes], item.id) 
+    end    
     
-    redirect '/modifie_item'
+    redirect '/admin'
     end
     
     # --------- METODOS ------------
-    def get_colors(colors, item_id)
+    def update_item_descriptions(colors, sizes, item_id)
       item_descriptions = ItemDescription.where(item_id: item_id)
+    
       colors_ids = colors&.map { |color| Color.find_by(name: color)&.id }
-    
-      item_descriptions.each_with_index do |item_description, index|
-        color_id = colors_ids[index] unless colors_ids.nil?
-    
-        item_description.update(color_id: color_id)
-      end
-    end
-    
-    def get_sizes(sizes, item_id)
-      item_descriptions = ItemDescription.where(item_id: item_id)
       sizes_ids = sizes&.map { |size| Size.find_by(number: size)&.id }
     
       item_descriptions.each_with_index do |item_description, index|
-        size_id = sizes_ids[index] unless sizes_ids.nil?
+        color_id = colors_ids.present? ? colors_ids[index] : item_description.color_id
+        size_id = sizes_ids.present? ? sizes_ids[index] : item_description.size_id
     
-        item_description.update(size_id: size_id)
+        item_description.update(color_id: color_id, size_id: size_id)
       end
     end
+    
+    
     
   
   
