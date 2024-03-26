@@ -31,10 +31,9 @@ class AdminController < Sinatra::Application
       in_stock: true
     }
 
-    
     #creo el elemento en DB
     item = Item.create(item_attributes)
-    upload_descrptions_id(params[:colors], params[:sizes], item.id)
+    create_descriptions_id(params[:colors], params[:sizes], item.id)
 
     redirect '/load_item'
   end
@@ -78,39 +77,20 @@ class AdminController < Sinatra::Application
 
   post '/modificar_item' do  
     item = Item.find_by(id: session[:id_item])
-  
-    if params[:file] && params[:file][:filename]
-      filename = params[:file][:filename]
-      target_path = File.join(settings.public_folder, 'front', item.category , filename)
-      item.image = target_path&.sub('/src/public', '')
-    end
-  
-    # Verificar y agregar parámetros solo si no están vacíos en el formulario
-    item.name = params[:name].empty? ? item.name : params[:name]
-    item.price = params[:price].empty? ? item.price : params[:price].to_f
-    item.description = params[:description].empty? ? item.description : params[:description]
-    item.in_stock = params[:in_stock].empty? ? item.in_stock : (params[:in_stock] == "true")
-  
-    # Actualizar la base de datos solo si hay cambios
-    item.save if item.changed?
-
-    puts "Received params: #{params.inspect}"
-
-    item_description = ItemDescription.where(item_id: item.id)
-
-    if params[:colors].present? || params[:sizes].present?
-      update_item_descriptions(params[:colors], params[:sizes], item.id) 
-    end    
+    
+    set_image(item)
+    set_item_value(item)
     
     redirect '/admin'
-    end
+  end
 
-    get '/logout' do
-      session[:admin] = false
-      redirect '/'
-    end
-    
+  get '/logout' do
+    session[:admin] = false
+    redirect '/'
+  end
+  
     # --------- METODOS ------------
+    # Actualiza color y talles
     def update_item_descriptions(colors, sizes, item_id)
       item_descriptions = ItemDescription.where(item_id: item_id)
     
@@ -124,34 +104,45 @@ class AdminController < Sinatra::Application
         item_description.update(color_id: color_id, size_id: size_id)
       end
     end
-    
-    
-    
-  
-  
-  def upload_descrptions_id(colors, sizes, id)
-    # Busco los id de las descripciones para las Claves foraneas
-    colors_id = []
-    sizes_id = []
 
-    (0...colors.length).each do |i|
-      colors_id << Color.find_by(name: colors[i])&.id
-    end
-    
-    (0...sizes.length).each do |i|
-      sizes_id << Size.find_by(number: sizes[i])&.id
+    # Actualiza la imagen
+    def set_image(item)
+      if params[:file] && params[:file][:filename]
+        filename = params[:file][:filename]
+        target_path = File.join(settings.public_folder, 'front', item.category , filename)
+        item.image = target_path&.sub('/src/public', '')
+      end
     end
 
-    # Creo la descripcion del elemento
-    max_length = [colors.length, sizes.length].max
+    # Actualiza los valores
+    def set_item_value(item)
+      item.name = params[:name].empty? ? item.name : params[:name]
+      item.price = params[:price].empty? ? item.price : params[:price].to_f
+      item.description = params[:description].empty? ? item.description : params[:description]
+      item.in_stock = params[:in_stock].empty? ? item.in_stock : (params[:in_stock] == "true")
 
-    (0...max_length).each do |i|
-      color_id = colors_id[i] || nil
-      size_id = sizes_id[i] || nil
-
-      ItemDescription.create(item_id: id, color_id: color_id, size_id: size_id)
+      item.save if item.changed?
+      
+      if params[:colors].present? || params[:sizes].present?
+        update_item_descriptions(params[:colors], params[:sizes], item.id) 
+      end    
     end
-  end
+    
+    # Carga los datos de un item
+    def create_descriptions_id(colors, sizes, id)
+      colors_ids = colors&.map { |color| Color.find_by(name: color)&.id }
+      sizes_ids = sizes&.map { |size| Size.find_by(number: size)&.id }
+    
+      max_length = [colors.length, sizes.length].max
+    
+      (0...max_length).each do |i|
+        color_id = colors_ids[i] || nil
+        size_id = sizes_ids[i] || nil
+    
+        ItemDescription.create(item_id: id, color_id: color_id, size_id: size_id)
+      end
+    end
+    
 
   # Chequea si ese item existe
   def item_exist(item_id)

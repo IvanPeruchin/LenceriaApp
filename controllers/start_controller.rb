@@ -19,12 +19,10 @@ class StartController < Sinatra::Application
 
   # Maneja la solicitud POST de inicio de sesion.
   post '/login' do
-    puts "El user es: #{ENV['DB_USERNAME']} y la contra es #{ENV['DB_PASSWORD']}"
     if params['username'] == ENV['DB_USERNAME'] && BCrypt::Password.new(hashed_password) == params['password']
       session[:admin] = true
       redirect '/admin'
     else 
-      puts "El user es: #{ENV['DB_USERNAME']} y la contra es #{ENV['DB_PASSWORD']}"
       redirect '/login'
     end
   end
