@@ -16,6 +16,7 @@ gem 'rubocop', '~> 0.91.0', require: false
 gem 'simplecov'
 gem 'sinatra-activerecord'
 gem 'sqlite3'
+gem 'dotenv', '~> 2.7'
 
 group :test do
   gem 'rspec'

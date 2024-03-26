@@ -6,6 +6,7 @@ require 'bundler/setup'
 require 'logger'
 require 'sinatra/activerecord'
 require 'sinatra/cookies'
+require 'dotenv/load'
 require 'sinatra/reloader' if Sinatra::Base.environment == :development
 
 require './controllers/start_controller.rb'
@@ -17,15 +18,17 @@ require_relative 'models/color'
 require_relative 'models/size'
 
 
-# Clase principal para definir la aplicacion de Sinatra
+# Clase principal para definir la aplicación de Sinatra
 class App < Sinatra::Application
+  Dotenv.load
+
   use StartController
   use AdminController
 
   enable :sessions
-  # Configuracion de la clave secreta de sesion
+  # Configuración de la clave secreta de sesión
   set :root, File.dirname(__FILE__)
-  set :session_secret, 'la_pelota_no_se_mancha'
+  set :session_secret, ENV['SESSION_SECRET']
   set :public_folder, File.dirname(__FILE__) + '/public'
 
   def initialize(_app = nil)

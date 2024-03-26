@@ -32,12 +32,12 @@ html{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.4rem 0;
+  padding: 1rem 0;
 }
 
 
 .image {
-  width: 20rem;
+  width: 10rem;
 }
 
 /* --------- LOGIN -------- */
@@ -51,13 +51,13 @@ html{
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 80rem;
-  height: 60rem;
-  gap: 8rem;
+  width: 40rem;
+  height: 50rem;
+  gap: 6rem;
   border: 0.5px var(--details-color) solid ;
   border-radius: 1rem;
   box-shadow: 2px 5px 15px var(--ligth-color);
-  margin-top: 3rem ;
+  margin-top: 1rem ;
   padding: 5rem;
 }
 

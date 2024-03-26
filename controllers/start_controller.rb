@@ -1,14 +1,16 @@
 # frozen_string_literal: true
 require 'sinatra/base'
 require 'bcrypt'
-require 'mail'
+require 'dotenv/load'
 require_relative '../methods'
 
 # Esta es la clase maneja la autenticacion de usuarios,
 # incluyendo el inicio de sesion, registro, validaciln de correo electronico
 # y gestion de sesiones de usuario.
 class StartController < Sinatra::Application
-  hashed_password = BCrypt::Password.create('12345678')
+  Dotenv.load
+
+  hashed_password = BCrypt::Password.create(ENV['DB_PASSWORD'])
 
   # Ruta para mostrar la pagina de inicio de sesion.
   get '/login' do
@@ -17,10 +19,12 @@ class StartController < Sinatra::Application
 
   # Maneja la solicitud POST de inicio de sesion.
   post '/login' do
-    if params['username'] == 'Silbia' && BCrypt::Password.new(hashed_password) == params['password']
+    puts "El user es: #{ENV['DB_USERNAME']} y la contra es #{ENV['DB_PASSWORD']}"
+    if params['username'] == ENV['DB_USERNAME'] && BCrypt::Password.new(hashed_password) == params['password']
       session[:admin] = true
       redirect '/admin'
     else 
+      puts "El user es: #{ENV['DB_USERNAME']} y la contra es #{ENV['DB_PASSWORD']}"
       redirect '/login'
     end
   end
