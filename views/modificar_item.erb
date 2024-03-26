@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Administrador</title>
-  <link rel="Stylesheet" href="/styles/modifie.css">
+  <link rel="Stylesheet" href="/styles/modificar_item.css">
   <link rel="icon" href="/front/Mini.png"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,10 +21,7 @@
     <div class="container-navbar">
       <div class="container navbar">
         <ul class="menu">
-          <li><a href="/load_item"  >Cargar prenda</a></li>
-          <li><a href="/search_item/modificar"  >Modificar prenda</a></li>
-          <li><a href="/search_item/eliminar"  >Eliminar prenda</a></li>
-          <li><a href="/">Salir</a></li>
+          <li><a href="/search_item/modificar">Volver</a></li>
         </ul>
       </div>
     </div>
@@ -35,55 +32,60 @@
     
     <div class="container carga">
       <h1 class="carga-tittle">ACTUALIZA TUS DATOS</h1>
-      <section class="carga-item">
-        <form action="/modificar_item" method="post" enctype="multipart/form-data">
+
+      <form action="/modificar_item" method="post" enctype="multipart/form-data" class="carga-form">
+        <div class="input-box">
           <label for="name">Nuevo nombre:</label>
           <input type="text" id="name" name="name">
+        </div>
 
+        <div class="input-box">
           <label for="price">Nuevo precio:</label>
           <input type="text" id="price" name="price">
+        </div>
 
+        <div class="input-box">
           <label for="description">Nueva descripción:</label>
           <input type="text" id="description" name="description">
+        </div>
 
+        <div class="input-box-select">
           <label for="in_stock">Hay stock:</label>
           <select id="in_stock" name="in_stock" required>
             <option value="true">Si</option>
             <option value="false">o</option>
           </select>
+        </div>
 
+        <div class="input-box-option">
           <label for="color">Nuevos color/es:</label>
           <select id="color" name="colors[]" multiple>
             <% @colors.each do |color| %>            
               <option value="<%= color.name %>"><%= color.name %></option>
             <% end %>            
           </select>
+        </div>
 
+        <div class="input-box-option">
           <label for="size">Nuevos talle/s:</label>
           <select id="size" name="sizes[]" multiple>
-           <% @sizes.each do |size| %>            
+            <% @sizes.each do |size| %>            
               <option value="<%= size.number %>"><%= size.number %></option>
             <% end %>
           </select>
+        </div>
 
+        <div class="input-box-picture">
           <label for="file">Nueva foto:</label>
           <input type="file" name="file" id="file" accept="image/*">
+        </div>
 
-          <button type="submit">Guardar Prenda</button>
-        </form>
-      </section>
+        <button type="submit" class="btn">Guardar Prenda</button>
+      </form>
+
     </div>
   </main>
   
-
-  <script>
-    $(document).ready(function() {
-      $('#color').select2();
-      $('#size').select2();
-    });
-  </script>
-
-
   <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
 </body>
 </html>

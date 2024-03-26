@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Administrador</title>
-  <link rel="Stylesheet" href="/styles/delete_item.css">
+  <link rel="Stylesheet" href="/styles/eliminar_item.css">
   <link rel="icon" href="/front/Mini.png"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,10 +19,7 @@
     <div class="container-navbar">
       <div class="container navbar">
         <ul class="menu">
-           <li><a href="/load_item"  >Cargar prenda</a></li>
-          <li><a href="/search_item/modificar"  >Modificar prenda</a></li>
-          <li><a href="/search_item/eliminar"  >Eliminar prenda</a></li>
-          <li><a href="/"  >Salir</a></li>
+          <li><a href="/search_item/eliminar"  >Volver</a></li>
         </ul>
       </div>
     </div>
@@ -30,22 +27,18 @@
 
   
   <main class="main-content">
-    <div class="container carga">
-      <h1 class="carga-tittle">ELIMINAR PRODUCTO</h1>
-      <h3> Su producto: </h3>
-      <p>Nombre: <%= @item.name %> <br> Precio: $<%= @item.price %> <br>Descripcion: <%= @item.description %> </p>
-      <section class="carga-item">
-        <form action="/eliminar_item" method="post">
-          <input type="hidden" name="_method" value="delete">
-          <button type="submit">Borrar</button>
-        </form>
-      </section>
+    <div class="container delete">
+      <h1 class="delete-tittle">ELIMINAR PRODUCTO</h1>
+      <p>ID: <%= @item.id %> <br> Nombre: <%= @item.name %> <br> Precio: $<%= @item.price %> <br>Descripcion: <%= @item.description %> </p>
+      <form action="/eliminar_item" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn">Eliminar</button>
+      </form>
     </div>
   </main>
  
 
 
   <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
-  <script src="/scripts/start.js"></script>
 </body>
 </html>

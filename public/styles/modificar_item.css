@@ -87,36 +87,10 @@ html{
 /* ------- MENU -------- */
 .main-content{
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
 
 }
 
-.item-verify{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100rem;
-  height: 20rem;
-  box-shadow: 3px 5px 10px var(--ligth-color);
-  border-radius: 1rem;
-  background-color: var(--background-color);
-  margin: 3rem 0;
-  gap: 1.7rem;
-}
-
-.item-verify h1{
-  font-size: 3rem;
-  padding: 2rem;
-}
-
-.items img{
-  width: 10rem;
-  height: 12rem;
-  object-fit: cover;
-}
 
 .carga{
   display: flex;
@@ -124,7 +98,7 @@ html{
   justify-content: flex-start;
   align-items: center;
   width: 100rem;
-  height: 100rem;
+  height: 170rem;
   box-shadow: 3px 5px 15px var(--ligth-color);
   border-radius: 1rem;
   background-color: var(--background-color);
@@ -293,5 +267,4 @@ html{
   font-size: 2rem;
   font-weight: 600;
 }
-
 
