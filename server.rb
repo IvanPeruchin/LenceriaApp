@@ -52,6 +52,7 @@ class App < Sinatra::Application
   end
 
   get '/' do
+    session[:admin] = false
     erb :start
   end
 end

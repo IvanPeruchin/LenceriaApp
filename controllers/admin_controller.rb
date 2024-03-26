@@ -2,6 +2,9 @@
 
 # AdminController es el responzable de menu, de lenceria, de deportivos y de modificaciones
 class AdminController < Sinatra::Application
+  before ['/admin', '/load_item', '/eliminar_item', '/modificar_item', '/search_item/:option_selected'] do
+    redirect '/login' unless session[:admin] # Redirige a la página de inicio de sesión si el admin no está autenticado
+  end
 
   get '/admin' do
     erb :admin
@@ -100,6 +103,11 @@ class AdminController < Sinatra::Application
     end    
     
     redirect '/admin'
+    end
+
+    get '/logout' do
+      session[:admin] = false
+      redirect '/'
     end
     
     # --------- METODOS ------------
