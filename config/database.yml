@@ -1,25 +1,11 @@
-# Create a file to configure the DB
-# config/database.yml
-
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
   pool: 5
   timeout: 5000
 
 development:
-  adapter: sqlite3
-  database: db/eco_development.sqlite3
-  pool: 5
-  timeout: 5000
-
-test:
-  adapter: sqlite3
-  database: db/test.sqlite3
-  pool: 5
-  timeout: 5000
-
-production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  <<: *default
+  database: s-torello
+  username: Ivan
+  password: IvanRootPeruchin
+  host: db

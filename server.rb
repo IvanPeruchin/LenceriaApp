@@ -22,15 +22,16 @@ require_relative 'models/size'
 class App < Sinatra::Application
   Dotenv.load
 
+  
   use StartController
   use AdminController
-
+  
   enable :sessions
   # Configuración de la clave secreta de sesión
   set :root, File.dirname(__FILE__)
   set :session_secret, ENV['SESSION_SECRET']
   set :public_folder, File.dirname(__FILE__) + '/public'
-
+  
   def initialize(_app = nil)
     super()
   end

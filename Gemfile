@@ -12,7 +12,7 @@ end
 gem 'bcrypt'
 gem 'rake'
 gem 'sinatra-activerecord'
-gem 'sqlite3'
+gem 'pg'
 gem 'dotenv', '~> 2.7'
 
 group :test do
