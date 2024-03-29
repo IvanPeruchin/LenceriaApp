@@ -1,0 +1,270 @@
+/*@import url(https://fonts.google.com/specimen/Poppins?preview.text=ECO
+-TREE&preview.text_type=custom);*/
+
+:root{
+  --primary-color: #fd219e;
+  --link-color: #ff0090;
+  --ligth-color: #fa6abc;
+  --details-color: #ee1485;
+  --background-color : #fef1f9;
+  --dark-color: #580029;
+}
+
+html{
+  font-size: 62.5%;
+  font-family: 'Poppins', sans-serif;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 170rem;
+  margin: 0 auto;
+}
+
+/* --------- MENU CENTRAL ---------- */
+.container-head{
+  background-color: var(--background-color);
+}
+
+.head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.4rem 0;
+  height: 50rem;
+}
+
+.tittle{
+  position: relative;
+}
+
+
+.image {
+  width: 46rem;
+}
+
+/* ---------- NAVBAR ----------- */
+
+.container-navbar{
+  background-color: var(--ligth-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+  padding: 1rem 0;
+}
+
+.menu{
+  display: flex;
+  gap: 2rem;
+}
+
+.menu li{
+  list-style: none;
+}
+
+.menu a{
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: var(--background-color);
+  font-weight: 400;
+  padding: 0 2.3rem;
+  position: relative;
+}
+
+.menu a:hover{
+  color: #000000;
+}
+
+/* ------- MENU -------- */
+.main-content{
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.carga{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100rem;
+  height: 170rem;
+  box-shadow: 3px 5px 15px var(--ligth-color);
+  border-radius: 1rem;
+  background-color: var(--background-color);
+  margin: 5rem 0;
+}
+
+.carga-tittle{
+  font-size: 6rem;
+  text-align: center;
+  padding: 5rem 0;
+
+}
+
+.carga-form{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  align-items: center;
+}
+
+/* --- Input de nombre, precio y descripcion */
+
+.input-box{ 
+  position: relative;
+  width: 100%;
+  height: 5rem;
+  border-bottom: 1px solid var(--primary-color);
+  margin: 5rem 0;
+  font-size: 1.5rem;
+}
+
+.input-box input{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  color: var(--details-color);
+}
+
+.input-box label{
+  position: absolute;
+  left: 0.5rem;
+  transform: translateY(-70%);
+  color: black;
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+/* --- Input de categoria */
+.input-box-select { 
+  position: relative;
+  width: 100%;
+  height: 5rem;
+  margin: 3rem 0;
+  font-size: 1.5rem;
+}
+
+.input-box-select select{ 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px #f7badc9b solid;
+  box-shadow: 3px 3px 5px #f2afd5;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  outline: none;
+  font-size: 2rem;
+  color: var(--details-color);
+  transform: translateY(30%);
+  padding: 1rem;
+}
+
+
+.input-box-select  label{
+  position: absolute;
+  left: 0.5rem;
+  transform: translateY(-70%);
+  color: black;
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+/* --- Input de talla y color */
+
+.input-box-option { 
+  position: relative;
+  width: 100%;
+  height: 17rem;
+  margin: 6rem 0;
+  font-size: 1.5rem;
+  margin-bottom: 6rem;
+}
+
+.input-box-option  label{
+  position: absolute;
+  left: 0.5rem;
+  color: black;
+  font-size: 2.4rem;
+}
+
+.input-box-option select{ 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px #f7badc9b solid;
+  box-shadow: 3px 3px 5px #f2afd5;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  outline: none;
+  font-size: 2rem;
+  color: var(--details-color);
+  transform: translateY(30%);
+  padding: 1rem;
+}
+
+/* --- Input de imagen */
+
+.input-box-picture { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 10rem;
+  margin: 5rem 0;
+  font-size: 1.5rem;
+}
+
+.input-box-picture label{ 
+  position: relative;
+  left: 0.5rem;
+  color: black;
+  font-size: 2.4rem;
+}
+
+.input-box-picture input[type="file"] {
+  width: 70%;
+  height: 5rem;
+  background: var(--link-color);
+  color: var(--background-color);
+  cursor: pointer;
+  outline: none;
+  border: none;
+  box-shadow: 3px 3px 5px #f2afd5;
+  border-radius: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* --- Boton */
+
+.btn{
+  width: 50%;
+  height: 5rem;
+  background: var(--link-color);
+  color: white;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+

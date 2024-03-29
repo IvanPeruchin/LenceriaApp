@@ -1,0 +1,137 @@
+/*@import url(https://fonts.google.com/specimen/Poppins?preview.text=ECO
+-TREE&preview.text_type=custom);*/
+
+:root{
+  --primary-color: #fd219e;
+  --link-color: #ff0090;
+  --ligth-color: #fa6abc;
+  --details-color: #ee1485;
+  --background-color : #fef1f9;
+  --dark-color: #580029;
+}
+
+html{
+  font-size: 62.5%;
+  font-family: 'Poppins', sans-serif;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 170rem;
+  margin: 0 auto;
+}
+
+/* --------- MENU CENTRAL ---------- */
+.container-head{
+  background-color: var(--background-color);
+}
+
+.head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.4rem 0;
+  height: 50rem;
+}
+
+.tittle{
+  position: relative;
+}
+
+
+
+/* ---------- NAVBAR ----------- */
+
+.container-navbar{
+  background-color: var(--ligth-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+  padding: 1rem 0;
+}
+
+.menu{
+  display: flex;
+  gap: 2rem;
+}
+
+.menu li{
+  list-style: none;
+}
+
+.menu a{
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: var(--background-color);
+  font-weight: 400;
+  padding: 0 2.3rem;
+  position: relative;
+}
+
+.menu a:hover{
+  color: #000000;
+}
+
+/* ------- MENU -------- */
+
+.main-content {
+  background-color: var(--background-color);
+
+}
+
+.delete {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  width: 60rem;
+  height: 40rem;
+  padding: 3rem;
+  border: #fa6abc36 solid 1px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px var(--ligth-color);
+}
+
+.delete h1 {
+  margin-bottom: 5rem;
+  font-size: 3.8rem;
+}
+
+.delete p {
+  font-size: 2rem;
+}
+
+/* --- Boton */
+.btn{
+  width: 15rem;
+  height: 3.3rem;
+  margin-top: 6rem;
+  background: var(--ligth-color);
+  color: white;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: var(--link-color);
+  border: var(--details-color) solid 1px;
+  box-shadow: 0px 0px 10px #fd219e ;
+}
+
+
+

@@ -1,165 +1,306 @@
 /*@import url(https://fonts.google.com/specimen/Poppins?preview.text=ECO
 -TREE&preview.text_type=custom);*/
 
+:root{
+  --primary-color: #fd219e;
+  --link-color: #ff0090;
+  --ligth-color: #fa6abc;
+  --details-color: #ee1485;
+  --background-color : #fef1f9;
+  --dark-color: #580029;
+}
+
+html{
+  font-size: 62.5%;
+  font-family: 'Poppins', sans-serif;
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover; 
-  background-image: url('/front/fondo.jpg'); 
+.container {
+  max-width: 170rem;
+  margin: 0 auto;
 }
 
-header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 40px 100px;
+/* --------- HEADER ---------- */
+.container-head{
+  background-color: var(--background-color);
+}
+
+.head{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 99;
+  padding: 1.4rem 0;
+}
+
+.tittle{
+  position: relative;
+  left: 36%;
+}
+
+.admin{
+  display: flex;
+  flex-direction: row;
+}
+
+.admin a{
+  margin: 0 10px;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: 0.2s;
+}
+
+.admin a:hover{
+  color: var(--link-color);
 }
 
 .image {
-  width: 1200px;
+  width: 350px;
 }
 
-.logo{
-  font-size: 3em;
-  border: 2px lime;
-  border-color: rgb(14, 251, 14);
-  border-radius: 6px;
-  color: #ff0090;
-  user-select: none;
-  height: px;
+/* ---------- NAVBAR ----------- */
+
+.container-navbar{
+  background-color: var(--ligth-color);
 }
 
-.nav a{
-  position: relative;
-  font-size: 1.1em;
-  color: #ffffff;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+  padding: 1rem 0;
+}
+
+.menu{
+  display: flex;
+  gap: 2rem;
+}
+
+.menu li{
+  list-style: none;
+}
+
+.menu a{
   text-decoration: none;
-  font-weight: 500;
-  margin-left: 40px;
-  transition: 5s;
-}
-
-.nav a::after{
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 3px;
-  background: #ff0090;
-  border-radius: 5px;
-  transform: scaleX(0);
-  transition: transform .5s;
-}
-
-.nav a:hover:after{
-  transform: scaleX(1);
-}
-
-.sub {
-  font-size: 34px;
-  font-weight: 600;
-  width: 280px;
-  color: #ffffff; 
-}
-
-.sub span {
+  font-size: 1.6rem;
+  color: var(--dark-color);
+  font-weight: 400;
+  padding: 0 2.3rem;
   position: relative;
 }
 
-.sub span::before {
-  content: ' Eco';
-  color: rgb(79, 219, 156);
-  animation: words 20s infinite;
+.menu a:hover{
+  color: var(--background-color);
 }
 
-.sub span::after {
-  content: '';
-  background-color: black;
-  position: absolute;
-  width: calc(100% + 8px);
-  height: 100%;
-  border-left: 2px solid rgb(79, 219, 156);
-  right: -8px;
-  animation: cursor .6s infinite, typing 20s steps(14) infinite;
+/* ------- BANNER --------- */
+
+.banner {
+  background-image: linear-gradient(100deg, #000000c8, #00000000), url('/front/banner1.jpeg');
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  transition: background-image 0.5s ease-in-out;
+  height: 60rem;
 }
 
-@keyframes cursor {
-  to {
-    border-left: 2px transparent;
-  }
+.content-banner{
+  max-width: 40rem;
+  margin: 0 10rem;
+  padding: 25rem 0;
 }
 
-@keyframes words {
-  0%, 20% {
-    content: ' Eco';
-  }
-  21%, 40% {
-    content: ' Educative';
-  }
-  41%, 60% {
-    content: ' Eco';
-  }
-  61%, 80% {
-    content: ' Educative';
-  }
-  81%, 100% {
-    content: ' Eco';
-  }
+.content-banner p{
+  color: var(--ligth-color);
+  font-size: 3.2rem;
+  transition: opacity 0.5s ease-in-out;
+  font-weight: 200;
 }
 
-@keyframes typing {
-  10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
-    width: 0;
-  }
-  5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
-    width: calc(100% + 8px);
-  }
+.content-banner h2{
+  color: var(--details-color);
+  font-size: 3.7rem;
+}
+
+/* -------- MAIN ---------- */
+.heading{
+  text-align: center;
+  font-weight: 300;
+  padding-bottom: 3rem;
+  font-size: 3rem;
+}
+
+.main-content{
+  background-color: var(--background-color);
+}
+
+.container-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding: 3rem 0;
+}
+
+.card-feature{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--ligth-color);
+  border-radius: 1rem;
+  padding: 1.5rem 6rem;
+}
+
+.card-feature i{
+  font-size: 3rem;
+  gap: 2rem;
+}
+
+.card-feature a{
+  font-size: 2rem;
+  color: var(--dark-color);
+  text-decoration: none;
+}
+
+/* ----------- CATEGORIES ---------- */
+
+.container-categories{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 3rem;
+  padding-bottom: 9rem;
+
+}
+
+.card-category{
+  height: 35rem;
+  width: 60rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2rem;
+  gap: 2rem;
+}
+
+.category-sport{
+  background-image: url(/front/sport.jpeg);
+  background-size: cover;
+  filter: blur(0.6px);
+  transition: 1s;
+}
+
+.category-sport:hover{
+  background-image: linear-gradient(120deg, #00000080, #00000000), url(/front/sport.jpeg);
+  background-size: cover;
+  filter: blur(0);
+}
+
+.category-lencery{
+  background-image: url(/front/lencery.jpeg);
+  background-size: cover;
+  background-position: 0 50%;
+  filter: blur(0.6px);
+  transition: 0.3s;
+}
+
+.category-lencery:hover{
+  background-image: linear-gradient(120deg, #00000080, #00000000), url(/front/lencery.jpeg);
+  background-size: cover;
+  filter: blur(0);
+}
+
+.card-category p {
+  color: var(--background-color);
+  font-size: 3.3rem;
+  transition: 0.2s;
+  text-transform: capitalize;
+}
+
+.card-category p:hover {
+  color: var(--ligth-color);
+  font-size: 3.4rem;
+  opacity: 1;
+}
+
+.card-category a {
+  color: var(--background-color);
+  text-decoration: none;
+  font-size: 3.3rem;
+  transition: 0.2s;
+}
+
+.card-category a:hover {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 3.3rem;
+  transition: 0.2s;
+}
+
+/* ---------- PAYMENTS --------- */
+.payment{
+  background-color: var(--background-color);
+}
+
+.container-payment{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  padding-bottom: 5rem;
+}
+
+.pay-method{
+  display: flex;
+  width: 30rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 0;
+  border: 3px var(--details-color) solid;
+  border-radius: 2rem;
+  background-color: #fa6abc36;
+}
+
+.pay-method p{
+  font-size: 1.3rem;
+  color: var(--details-color);
+}
+
+.tittle-payment{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.7rem;
+  columns: var(--dark-color);
+}
+
+/* ---------- Footer ----------- */
+.footer{
+  background-color: var(--ligth-color);
+}
+
+.conteiner-footer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.footer-info{
+  font-size: 1.8rem;
+  font-weight: 200;
 }
 
 
-@media (max-width: 800px) {
-  .logo{
-    font-size: 2.4em;
-  }
-
-  .nav a{
-    font-size: 0.72em;
-  }
-
-  .image{
-    width: 600px;
-  }
-
-  .sub{
-    position: relative;
-    top: 100px;
-    left: 40px;
-  }
-
-}
-
-.text{
-  color: #fa6abc;
-  font-size: 1.4em;
-}
 

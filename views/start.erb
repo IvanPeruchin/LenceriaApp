@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Silbia Torello - Lenceria y ropa deportiva</title>
+  <title> S - Torello</title>
   <link rel="Stylesheet" href="/styles/start.css">
-  <link rel="icon" href="/front/miniatura.png"/>
+  <link rel="icon" href="/front/Mini.png"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,26 +14,122 @@
 </head>
 
 <body>
-
+  
   <header>
-    <h2 class="logo"> BIENVENIDO </h2>
-    
-    <nav class="nav">
-      <a href="/login">INICIAR SESION</a>
-      <a href="/register">REGISTRARSE</a>
-    </nav>
+    <div class="container-head">
+      <div class="container head">
+        <div class="tittle">
+          <a href="/">
+            <img class="image" src="/front/Logo.png" alt="logo">
+          </a>
+          
+        </div>
+
+        <div class="admin">
+          <h3> Eres administrador? </h3><a href="/login">Ingresa aqui</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-navbar">
+      <div class="container navbar">
+        <ul class="menu">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/information">Informacion</a></li>
+        </ul>
+      </div>
+    </div>
   </header>
 
-  <div class="logo_central">
-    <img class="image" src="/front/logo.png" alt="logo">
-  </div>
-
-  <section class="text">
-    <p >
-      Soy Silbia y te invito a descubrir todos mis productos para que brilles con lenceria <br> o para que cuides tu salud con la mejor ropa 
-      deportiva
-    </p>
+  <section class="banner">
+    <div class="content-banner">
+      <p id="texto1">LENCERIA</p>
+    </div>
   </section>
-  
+
+
+  <main class="main-content">
+    <section class="container container-features">
+      <div class="card-feature">
+        <i class="fa-brands fa-instagram"></i>
+        <a href="https://www.instagram.com/silbiatorello/?utm_source=ig_web_button_share_sheet&igsh=OGQ5ZDc2ODk2ZA%3D%3D">
+          <p>Instagram</p>
+        </a>
+      </div>
+      <div class="card-feature">
+        <i class="fa-brands fa-facebook"></i>
+        <a href="https://www.facebook.com/silbialenceria?mibextid=ZbWKwL">
+          <p>Facebook</p>
+        </a>
+      </div>
+      <div class="card-feature">
+        <i class="fa-brands fa-whatsapp"></i> 
+        <a href="https://wa.me/543585043029">
+          <p>WhatsApp</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="container categories">
+      <h1 class="heading">CATEGORIAS</h1>
+      <div class="container-categories">
+        <div class="card-category category-sport">
+          <p>ROPA DEPORTIVA</p>
+          <a href="/categories?category=sport">Ver catalogo</a>
+        </div>
+        <div class="card-category category-lencery">
+          <p>LENCERIA</p>
+          <a href="/categories?category=lenceria">Ver catalogo</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="container payment">
+      <h1 class="heading">METODOS DE PAGO</h1>
+      <div class="container-payment">
+        <div class="pay-method">
+          <div class="tittle-payment">
+            <i class="fa-regular fa-credit-card"></i>
+            <h3>Todas las tarjetas</h3>
+          </div>
+          <p>10% de recargo</p>
+        </div>
+        <div class="pay-method">
+          <div class="tittle-payment">
+            <i class="fa-solid fa-money-bill-transfer"></i>
+            <h3>Transferencia</h3>
+          </div>
+          <p>10% off pago al contado </p>
+        </div>
+        <div class="pay-method">
+          <div class="tittle-payment">
+            <i class="fa-solid fa-money-bill-1"></i>
+            <h3>Efectivo</h3>
+          </div>  
+          <p>10% off pago al contado </p>
+        </div>
+      </div>
+      
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container conteiner-footer">
+      <p class="footer-info">Informacion Importante</p>
+      <p>
+        Esta página sirve como vitrina y no se realizan transacciones comerciales ni solicitudes de información personal a través de este medio.        Silbia Torello no se responsabiliza por solicitudes de datos personales o compras que se realicen en páginas con un nombre similar al de este sitio.
+      </p>
+      <span>
+        Ante cualquier duda comunicarse via WhatsApp o Instagram
+      </span>      
+    </div>
+  </footer>
+
+  <script
+			src="https://kit.fontawesome.com/81581fb069.js"
+			crossorigin="anonymous"></script>
+  <script src="/scripts/start.js"></script>
 </body>
 </html>

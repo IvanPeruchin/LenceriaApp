@@ -1,0 +1,157 @@
+/*@import url(https://fonts.google.com/specimen/Poppins?preview.text=ECO
+-TREE&preview.text_type=custom);*/
+
+:root{
+  --primary-color: #fd219e;
+  --link-color: #ff0090;
+  --ligth-color: #fa6abc;
+  --details-color: #ee1485;
+  --background-color : #fef1f9;
+  --dark-color: #580029;
+}
+
+html{
+  font-size: 62.5%;
+  font-family: 'Poppins', sans-serif;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 170rem;
+  margin: 0 auto;
+}
+
+/* --------- HEADER ---------- */
+.container-head{
+  background-color: var(--background-color);
+}
+
+.head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 0;
+}
+
+.tittle{
+  position: relative;
+  left: 36%;
+}
+
+.admin{
+  display: flex;
+  flex-direction: row;
+}
+
+.admin a{
+  margin: 0 10px;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: 0.2s;
+}
+
+.admin a:hover{
+  color: var(--link-color);
+}
+
+.image {
+  width: 350px;
+}
+
+/* ---------- NAVBAR ----------- */
+
+.container-navbar{
+  background-color: var(--ligth-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+  padding: 1rem 0;
+}
+
+.menu{
+  display: flex;
+  gap: 2rem;
+}
+
+.menu li{
+  list-style: none;
+}
+
+.menu a{
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: var(--dark-color);
+  font-weight: 400;
+  padding: 0 2.3rem;
+  position: relative;
+}
+
+.menu a:hover{
+  color: var(--background-color);
+}
+
+/* --------- INFORMATION ----------- */
+.info-general{
+  background-color: var(--background-color);
+}
+
+.information{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:stretch
+}
+
+.tittle-info{
+  font-size: 10rem;
+  padding: 3rem 0;
+}
+
+.subtittle-info{
+  position: relative;
+  font-size: 5rem;
+  padding: 2rem 0;
+  color: var(--details-color);
+}
+
+.text-info{
+  font-size: 1.5rem;
+  color: var(--dark-color);
+}
+
+.information span{
+  font-size: 1.5rem;
+  color: var(--details-color);
+}
+
+
+/* ---------- Footer ----------- */
+.footer{
+  background-color: var(--ligth-color);
+}
+
+.conteiner-footer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.footer-info{
+  font-size: 1.8rem;
+  font-weight: 200;
+}
+
+

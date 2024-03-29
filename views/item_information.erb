@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Informacion</title>
+  <link rel="Stylesheet" href="/styles/item_information.css">
+  <link rel="icon" href="/front/Mini.png"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  
+  <header>
+    <div class="container-head">
+      <div class="container head">
+        <div class="tittle">
+          <a href="/">
+            <img class="image" src="/front/Logo.png" alt="logo">
+          </a>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="container-navbar">
+      <div class="container navbar">
+        <ul class="menu">
+          <li><a href="/categories?category=<%= @item_selected %>">Volver</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="info-general">
+    <div class="container information">
+      <h1 class="tittle-info"><%= @item.name%></h1>
+      <p class="id-item">
+        Codigo: (<%= @item.id %>)
+      </p>
+      <div class="item-info">
+        <img src="<%= @item.image%>" alt="prenda" class="image-info">
+        <div class="description-content">
+          <div class="item-description">
+            <h3>
+             Precio: $ <%= @item.price%>
+            </h3>
+            <div class="info-content" style="display: <%= @item.in_stock ? 'flex' : 'none' %>">
+              <h3>
+                Talles disponibles:
+                <div class="sizes">
+                  <% @sizes.each do |size| %>
+                    <p> <%= size.number %> </p>
+                   <% end %>
+                </div>
+              </h3>
+              <h3>
+                Colores disponibles: 
+                <div class="colors">
+                  <% @colors.each do |color| %>
+                    <p> <%= color.name %> </p>
+                   <% end %>
+                </div>
+              </h3>
+            </div>
+            <h3 class="no-stock" style="display: <% @item.in_stock ? 'none' : 'flex' %>">
+              <% if not @item.in_stock %>
+                SIN STOCK
+              <% end %>
+            </h3>
+          </div>
+          <div class="item-description" style="display: <%= @item.in_stock ? 'flex' : 'none' %>">
+            <h3>
+              Descripcion: 
+              <p class="descripcion">
+                <%= @item.description %>
+              </p>
+            </h3>
+          </div>
+        </div>
+      </div>
+      
+    </div>    
+  </div>
+
+  <footer class="footer">
+    <div class="container conteiner-footer">
+      <p class="footer-info">Informacion Importante</p>
+      <p>
+        La imagen es solo para ver la prenda. Para ver los demas colores, por favor consulte via WhatsApp y ahi le enviaremos las demas imagenes
+      </p>
+      <span>
+        Los talles de prendas mostrados son una representación de las opciones disponibles. Por favor, tenga en cuenta que esta información se refiere a la variedad de talles que podrían estar disponibles en nuestros productos, pero no garantiza la disponibilidad inmediata en el inventario actual. 
+      </span>      
+    </div>
+  </footer>
+
+  <script
+			src="https://kit.fontawesome.com/81581fb069.js"
+			crossorigin="anonymous"></script>
+  <script src="/scripts/start.js"></script>
+</body>
+</html>

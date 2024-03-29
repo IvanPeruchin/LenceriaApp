@@ -7,3 +7,13 @@ services:
       - "4000:4000"
     volumes:
       - .:/src
+
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: s_torello
+      POSTGRES_USER: Ivan
+      POSTGRES_PASSWORD: IvanRootPeruchin
+    ports:
+      - "5432:5432"

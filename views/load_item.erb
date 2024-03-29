@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrador</title>
+  <link rel="stylesheet" href="/styles/load_item.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+  <link rel="icon" href="/front/Mini.png"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+</head>
+
+<body>
+  
+  <header>
+    <div class="container-navbar">
+      <div class="container navbar">
+        <ul class="menu">
+          <li><a href="/admin">Volver</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container carga">
+      <h1 class="carga-tittle">CARGAR PRODUCTO</h1>
+      <form action="/load_item" method="post" enctype="multipart/form-data" class="carga-form">
+
+          <div class="input-box">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="input-box">
+            <label for="price">Precio</label>
+            <input type="text" id="price" name="price" required>
+          </div>
+
+          <div class="input-box">
+            <label for="description">Descripción</label>
+            <input type="text" id="description" name="description" required>
+          </div>
+
+          <div class="input-box-select">
+            <label for="category">Categoría</label>
+            <select id="category" name="category" required>
+              <option value="lenceria">Lenceria</option>
+              <option value="sport">Ropa deportiva</option>
+            </select>
+          </div>
+
+          <div class="input-box-option">
+            <label for="color">Color</label>
+            <select id="color" name="colors[]" multiple required>
+              <% @colors.each do |color| %>            
+                <option value="<%= color.name %>"><%= color.name %></option>
+              <% end %>            
+            </select>
+          </div>
+
+          <div class="input-box-option">
+            <label for="size">Talle</label>
+            <select id="size" name="sizes[]" multiple required>
+             <% @sizes.each do |size| %>            
+                <option value="<%= size.number %>"><%= size.number %></option>
+              <% end %>
+            </select>
+          </div>
+
+          <div class="input-box-picture">
+            <label for="file">Selecciona una foto</label>
+            <input type="file" name="file" id="file" accept="image/*">
+          </div>
+
+          <button type="submit" class="btn">Guardar Prenda</button>
+        </form>
+      
+    </div>
+  </main>
+  
+
+  <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+</body>
+</html>

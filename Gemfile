@@ -10,12 +10,10 @@ github 'sinatra/sinatra' do
 end
 
 gem 'bcrypt'
-gem 'mail'
 gem 'rake'
-gem 'rubocop', '~> 0.91.0', require: false
-gem 'simplecov'
 gem 'sinatra-activerecord'
-gem 'sqlite3'
+gem 'pg'
+gem 'dotenv', '~> 2.7'
 
 group :test do
   gem 'rspec'

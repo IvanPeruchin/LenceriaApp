@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 # Modelo para representar los productos de la tienda
-class Item < ActiveRecord::Base
-  has_many :item_descriptions, dependent: :destroy
+class Color < ActiveRecord::Base
+  has_many :item_descriptions
 end
